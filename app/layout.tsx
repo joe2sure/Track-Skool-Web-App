@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SkoolBridge",
-  description: "Complete school management system with modern UI, role-based dashboards, and comprehensive features for students, teachers, parents, and administrators.",
+  description: "If all that matters is the future of tomorrow, then we must give our kids all it takes, With SkoolBridge, Everything has now been made easy for students, teachers, parents, and administrators.",
 };
 
 export default function RootLayout({

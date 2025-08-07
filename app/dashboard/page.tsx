@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Header from '../../components/Header';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import { ThemeProvider } from '../../components/ThemeProvider';
+import RoleBasedHeader from '@/components/RoleBasedHeader/RoleBasedHeader';
 
 // Student Dashboard
   const StudentDashboard = () => (
@@ -250,7 +250,7 @@ export default function Dashboard() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 high-contrast:bg-black">
-        <Header />
+        <RoleBasedHeader />
         <main className="px-6 py-8">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white high-contrast:text-white mb-2">Welcome back!</h1>

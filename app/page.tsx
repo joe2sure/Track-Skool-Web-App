@@ -27,7 +27,9 @@ export default function Home() {
               </div>
               <h1 className="text-5xl font-['Pacifico'] text-light mb-4">SkoolBridge</h1>
               <p className="text-xl text-light mb-8 max-w-2xl mx-auto">
-                Complete school management system with modern UI, role-based dashboards, and comprehensive features for students, teachers, parents, and administrators.
+                {/* Complete school management system with modern UI, role-based dashboards, and comprehensive features for students, teachers, parents, and administrators. */}
+
+                If all that matters is the future of tomorrow, then we must give our kids all it takes, With SkoolBridge, Everything has now been made easy for students, teachers, parents, and administrators.
               </p>
             </div>
             

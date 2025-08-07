@@ -34,9 +34,10 @@ export default function Login() {
     // Store token
     if (data.token) {
       localStorage.setItem('token', data.token);
+      localStorage.setItem('userType', data.userType)
     }
 
-    // Extract role dynamically
+    // Extract role
     const role = data.user?.userType;
 
     switch (role) {
