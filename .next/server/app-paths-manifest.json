@@ -1,0 +1,8 @@
+{
+  "/dashboard/page": "app/dashboard/page.js",
+  "/assignments/page": "app/assignments/page.js",
+  "/attendance/page": "app/attendance/page.js",
+  "/library/page": "app/library/page.js",
+  "/communication/page": "app/communication/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}
