@@ -6,9 +6,7 @@ import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import { ThemeProvider } from '../../components/ThemeProvider';
 
-export default function Dashboard() {
-  const [userRole] = useState('student');
-
+// Student Dashboard
   const StudentDashboard = () => (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -175,16 +173,90 @@ export default function Dashboard() {
     </div>
   );
 
+// Teacher Dashboard
+const TeacherDashboard = () => (
+  <div className="space-y-4">
+    <Card>
+      <h2 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Welcome, Teacher!</h2>
+      <p className="text-gray-700 dark:text-gray-300">Here's your teaching overview.</p>
+    </Card>
+    <Card>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Upcoming Classes</h3>
+      <ul className="list-disc list-inside text-gray-800 dark:text-white mt-2">
+        <li>9:00 AM – Physics (Grade 10)</li>
+        <li>11:00 AM – Chemistry Lab</li>
+        <li>2:00 PM – Staff Meeting</li>
+      </ul>
+    </Card>
+  </div>
+);
+
+// Admin Dashboard
+const AdminDashboard = () => (
+  <div className="space-y-4">
+    <Card>
+      <h2 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Welcome, Admin!</h2>
+      <p className="text-gray-700 dark:text-gray-300">Here's your school management overview.</p>
+    </Card>
+    <Card>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Quick Stats</h3>
+      <ul className="text-gray-800 dark:text-white mt-2">
+        <li>Total Students: 1,250</li>
+        <li>Total Teachers: 85</li>
+        <li>Attendance Today: 92%</li>
+      </ul>
+    </Card>
+  </div>
+);
+
+// Parent Dashboard
+const ParentDashboard = () => (
+  <div className="space-y-4">
+    <Card>
+      <h2 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Welcome, Parent!</h2>
+      <p className="text-gray-700 dark:text-gray-300">Check your child’s progress and school activities.</p>
+    </Card>
+    <Card>
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Child Summary</h3>
+      <ul className="text-gray-800 dark:text-white mt-2">
+        <li>Name: Emily Johnson</li>
+        <li>Class: Grade 6</li>
+        <li>GPA: 3.9</li>
+        <li>Attendance: 97%</li>
+      </ul>
+    </Card>
+  </div>
+);
+
+export default function Dashboard() {
+  // Change the useState value to either student, teacher, admin or parent to test different dashboards
+  const [userRole] = useState('student');
+
+  const renderDashboard = () => {
+    switch (userRole) {
+      case 'student':
+        return <StudentDashboard />;
+      case 'teacher':
+        return <TeacherDashboard />;
+      case 'admin':
+        return <AdminDashboard />;
+      case 'parent':
+        return <ParentDashboard />;
+      default:
+        return <p className="text-red-500">Invalid user role.</p>;
+    }
+  };
+
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 high-contrast:bg-black">
         <Header />
         <main className="px-6 py-8">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white high-contrast:text-white mb-2">Welcome back, Sarah!</h1>
-            <p className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Here's what's happening with your studies today.</p>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white high-contrast:text-white mb-2">Welcome back!</h1>
+            <p className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Here’s what’s happening today.</p>
           </div>
-          <StudentDashboard />
+          {renderDashboard()}
         </main>
       </div>
     </ThemeProvider>

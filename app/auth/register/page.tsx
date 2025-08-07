@@ -22,10 +22,34 @@ export default function Register() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      alert(`Registration failed: ${error.message || 'Unknown error'}`);
+      return;
+    }
+
+    const data = await response.json();
+    console.log('Registration successful:', data);
+    
     window.location.href = '/dashboard';
-  };
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred while registering. Please try again.');
+  }
+};
+
 
   return (
     <div 
