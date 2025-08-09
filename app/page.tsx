@@ -35,7 +35,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
               <Link href="/auth/portal">
                 <Button size="lg" className="w-48">
-                  <i className="ri-login-circle-line mr-2 w-5 h-5 flex items-center justify-center"></i>
+                  <i className="ri-portal-line mr-2 w-5 h-5 flex items-center justify-center"></i>
                   Portal
                 </Button>
               </Link>
