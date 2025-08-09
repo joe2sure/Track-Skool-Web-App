@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import Header from "../../components/Header"
-import Card from "../../components/ui/Card"
-import Button from "../../components/ui/Button"
-import Input from "../../components/ui/Input"
-import { ThemeProvider } from "../../components/ThemeProvider"
-import NotificationPanel from "../../components/ui/NotificationPanel"
-import QuizModule from "../../components/ui/QuizModule"
-import AIAssistant from "../../components/ui/AIAssistant"
+import Header from "../../../components/Header"
+import Card from "../../../components/ui/Card"
+import Button from "../../../components/ui/Button"
+import Input from "../../../components/ui/Input"
+import { ThemeProvider } from "../../../components/ThemeProvider"
+import NotificationPanel from "../../../components/ui/NotificationPanel"
+import QuizModule from "../../../components/ui/QuizModule"
+import AIAssistant from "../../../components/ui/AIAssistant"
 
 export default function StudentPortal() {
   const [userData, setUserData] = useState<any>(null)
