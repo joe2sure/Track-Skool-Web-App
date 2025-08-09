@@ -119,7 +119,7 @@ export default function Assignments() {
             </label>
             <Input
               type="number"
-              value={formData.totalPoints}
+              value={formData.totalPoints.toString()}
               onChange={(e) => setFormData({ ...formData, totalPoints: parseInt(e.target.value) })}
               placeholder="100"
             />
@@ -216,7 +216,7 @@ export default function Assignments() {
                       <Input
                         type="number"
                         placeholder="Grade"
-                        value={student.grade || ''}
+                        value={student.grade !== null && student.grade !== undefined ? student.grade.toString() : ''}
                         className="w-20 text-center"
                         onChange={() => {}}
                       />
