@@ -46,34 +46,44 @@ export default function DashboardLogin() {
     let isValid = false
 
     switch (userType) {
-      case "student":
+      case "student": {
+        const cred = credentials as { schoolId: string; studentId: string; password: string }
         isValid =
-          formData.schoolId === credentials.schoolId &&
-          formData.studentId === credentials.studentId &&
-          formData.password === credentials.password
+          formData.schoolId === cred.schoolId &&
+          formData.studentId === cred.studentId &&
+          formData.password === cred.password
         break
-      case "parent":
+      }
+      case "parent": {
+        const cred = credentials as { schoolId: string; studentId: string; parentId: string; password: string }
         isValid =
-          formData.schoolId === credentials.schoolId &&
-          formData.studentId === credentials.studentId &&
-          formData.parentId === credentials.parentId &&
-          formData.password === credentials.password
+          formData.schoolId === cred.schoolId &&
+          formData.studentId === cred.studentId &&
+          formData.parentId === cred.parentId &&
+          formData.password === cred.password
         break
-      case "teacher":
+      }
+      case "teacher": {
+        const cred = credentials as { schoolId: string; teacherId: string; password: string }
         isValid =
-          formData.schoolId === credentials.schoolId &&
-          formData.teacherId === credentials.teacherId &&
-          formData.password === credentials.password
+          formData.schoolId === cred.schoolId &&
+          formData.teacherId === cred.teacherId &&
+          formData.password === cred.password
         break
-      case "school_admin":
+      }
+      case "school_admin": {
+        const cred = credentials as { schoolId: string; adminId: string; password: string }
         isValid =
-          formData.schoolId === credentials.schoolId &&
-          formData.adminId === credentials.adminId &&
-          formData.password === credentials.password
+          formData.schoolId === cred.schoolId &&
+          formData.adminId === cred.adminId &&
+          formData.password === cred.password
         break
-      case "super_admin":
-        isValid = formData.superAdminId === credentials.superAdminId && formData.password === credentials.password
+      }
+      case "super_admin": {
+        const cred = credentials as { superAdminId: string; password: string }
+        isValid = formData.superAdminId === cred.superAdminId && formData.password === cred.password
         break
+      }
     }
 
     if (isValid) {
