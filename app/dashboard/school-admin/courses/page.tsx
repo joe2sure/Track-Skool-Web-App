@@ -1,13 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+// import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { BookOpen, Plus, CheckCircle, Users, Search, Download, Eye, Edit, Trash2, TrendingUp } from "lucide-react"
+import { Input } from "@/components/ui/parent/input"
 
 const courses = [
   {
@@ -167,7 +168,7 @@ export default function CoursesPage() {
               <Input
                 placeholder="Search courses by name, code, or instructor..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e: { target: { value: SetStateAction<string> } }) => setSearchTerm(e.target.value)}
                 className="pl-10"
               />
             </div>

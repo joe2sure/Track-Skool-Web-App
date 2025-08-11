@@ -1,3 +1,5 @@
+// import { Input } from "@/components/ui/input"
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 "use client"
 
 import type React from "react"
@@ -6,9 +8,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import {
   Menu,
@@ -30,6 +30,8 @@ import {
   LogOut,
 } from "lucide-react"
 import { Suspense } from "react"
+import { Input } from "@/components/ui/parent/input"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/parent/avatar"
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard/school-admin", icon: LayoutDashboard },
