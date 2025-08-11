@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Header from "../../components/StudentHeader";
+// import Header from "../../components/StudentHeader";
+import Header from "@/components/RoleBasedHeader/StudentHeader";
 import Card from "../../components/ui/Card";
 import Button from "../../components/ui/Button";
 import Input from "../../components/ui/Input";

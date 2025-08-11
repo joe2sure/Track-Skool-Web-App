@@ -1,3 +1,4 @@
+"use client";
 import DefaultHeader from "./DefaultHeader";
 
 type NavLink = {
@@ -6,12 +7,22 @@ type NavLink = {
 };
 
 type RoleBasedHeaderProps = {
-  navLinks?: NavLink[]; // Optional
+  navLinks?: NavLink[];
 };
 
+interface User {
+  userType: string;
+  // Add other properties as needed
+}
+
 export default function RoleBasedHeader({ navLinks }: RoleBasedHeaderProps) {
-  const userType =
-    typeof window !== "undefined" ? localStorage.getItem("userType") : null;
+  const storedUser = localStorage.getItem("currentUser");
+
+  const parsedUser: User | null = storedUser ? JSON.parse(storedUser) : null;
+
+  console.log(parsedUser?.userType);
+
+  const userType = typeof window !== "undefined" && parsedUser ? parsedUser.userType : null;
 
   const defaultLinks: Record<string, NavLink[]> = {
     student: [
@@ -37,7 +48,6 @@ export default function RoleBasedHeader({ navLinks }: RoleBasedHeaderProps) {
       { href: "/resources", label: "Resources" },
       { href: "/communication", label: "Communication" },
     ],
-    
   };
 
   const linksToUse = navLinks || defaultLinks[userType || "student"] || [];
