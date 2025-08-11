@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Header from "../../../components/Header"
-import Card from "../../../components/ui/Card"
-import Button from "../../../components/ui/Button"
+import Card from "../../../components/ui/card"
+import Button from "../../../components/ui/button"
 import { ThemeProvider } from "../../../components/ThemeProvider"
 
 export default function SuperAdminDashboard() {

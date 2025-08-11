@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import Button from "../components/ui/Button"
+// import Button from "../components/ui/button"
 import { ThemeProvider } from "../components/ThemeProvider"
+import Button2 from "@/components/ui/button2"
+// import  Button2  from "@/components/ui/button2"
 
 export default function Home() {
   return (
@@ -34,20 +36,20 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
               <Link href="/auth/portal">
-                <Button size="lg" className="w-48">
+                <Button2 size="lg" className="w-48">
                   <i className="ri-portal-line mr-2 w-5 h-5 flex items-center justify-center"></i>
                   Portal
-                </Button>
+                </Button2>
               </Link>
               <Link href="/auth/dashboard-login">
-                <Button
+                <Button2
                   size="lg"
                   variant="outline"
                   className="w-48 bg-white/10 border-white text-white hover:bg-white/20"
                 >
                   <i className="ri-dashboard-line mr-2 w-5 h-5 flex items-center justify-center"></i>
                   View Dashboard
-                </Button>
+                </Button2>
               </Link>
             </div>
 

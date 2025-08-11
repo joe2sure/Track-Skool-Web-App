@@ -3,9 +3,11 @@
 import type React from "react"
 
 import { useState } from "react"
-import Card from "./Card"
-import Button from "./Button"
+// import Card from "./card"
+// import Button from "./button"
 import Input from "./Input"
+import { Button } from "./button"
+import { Card } from "./card"
 
 interface Message {
   id: string

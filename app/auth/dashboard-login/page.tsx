@@ -5,9 +5,9 @@ import type React from "react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import Button from "../../../components/ui/Button"
 import Input from "../../../components/ui/Input"
-import Card from "../../../components/ui/Card"
+import Button2 from "../../../components/ui/button2"
+import Card2 from "../../../components/ui/card2"
 
 export default function DashboardLogin() {
   const [userType, setUserType] = useState("student")
@@ -286,7 +286,7 @@ export default function DashboardLogin() {
 
         <form onSubmit={isRegistering ? handleRegister : handleLogin} className="space-y-6">
           {!isRegistering && (
-            <Card className="p-4 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+            <Card2 className="p-4 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
               <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">Demo Credentials:</h4>
               <div className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
                 {userType === "student" && <p>School ID: SCH001, Student ID: STU001, Password: student123</p>}
@@ -297,7 +297,7 @@ export default function DashboardLogin() {
                 {userType === "school_admin" && <p>School ID: SCH001, Admin ID: ADM001, Password: admin123</p>}
                 {userType === "super_admin" && <p>Super Admin ID: SUPER001, Password: super123</p>}
               </div>
-            </Card>
+            </Card2>
           )}
 
           {isRegistering && (
@@ -361,9 +361,9 @@ export default function DashboardLogin() {
             </div>
           )}
 
-          <Button type="submit" className="w-full" size="lg">
+          <Button2 type="submit" className="w-full" size="lg">
             {isRegistering ? "Create Account" : "Sign In"}
-          </Button>
+          </Button2>
         </form>
 
         <div className="mt-6 text-center">

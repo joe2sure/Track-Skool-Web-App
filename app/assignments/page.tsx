@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import Header from '../../components/Header';
-import Card from '../../components/ui/Card';
-import Button from '../../components/ui/Button';
+// import Card from '../../components/ui/card';
+// import Button from '../../components/ui/button';
 import Input from '../../components/ui/Input';
 import { ThemeProvider } from '../../components/ThemeProvider';
 import Modal from '../../components/ui/Modal';
+import  Button2  from '@/components/ui/button2';
+import  Card2  from '@/components/ui/card2';
 
 export default function Assignments() {
   const [view, setView] = useState('list');
@@ -166,12 +168,12 @@ export default function Assignments() {
         </div>
 
         <div className="flex justify-end space-x-3">
-          <Button variant="outline" onClick={() => setShowCreateModal(false)}>
+          <Button2 variant="outline" onClick={() => setShowCreateModal(false)}>
             Cancel
-          </Button>
-          <Button onClick={() => setShowCreateModal(false)}>
+          </Button2>
+          <Button2 onClick={() => setShowCreateModal(false)}>
             Create Assignment
-          </Button>
+          </Button2>
         </div>
       </div>
     );
@@ -208,10 +210,10 @@ export default function Assignments() {
               <div className="flex items-center space-x-3">
                 {student.submitted && (
                   <>
-                    <Button size="sm" variant="outline">
+                    <Button2 size="sm" variant="outline">
                       <i className="ri-eye-line mr-1 w-3 h-3 flex items-center justify-center"></i>
                       View
-                    </Button>
+                    </Button2>
                     <div className="flex items-center space-x-2">
                       <Input
                         type="number"
@@ -238,12 +240,12 @@ export default function Assignments() {
         </div>
 
         <div className="flex justify-end space-x-3">
-          <Button variant="outline" onClick={() => setShowGradingModal(false)}>
+          <Button2 variant="outline" onClick={() => setShowGradingModal(false)}>
             Close
-          </Button>
-          <Button>
+          </Button2>
+          <Button2>
             Save Grades
-          </Button>
+          </Button2>
         </div>
       </div>
     );
@@ -260,15 +262,15 @@ export default function Assignments() {
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white high-contrast:text-white mb-2">Assignment Management</h1>
                 <p className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Create, manage and grade student assignments</p>
               </div>
-              <Button onClick={() => setShowCreateModal(true)}>
+              <Button2 onClick={() => setShowCreateModal(true)}>
                 <i className="ri-add-line mr-2 w-4 h-4 flex items-center justify-center"></i>
                 Create Assignment
-              </Button>
+              </Button2>
             </div>
           </div>
 
           <div className="mb-6">
-            <Card>
+            <Card2>
               <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-2 bg-gray-100 dark:bg-gray-700 high-contrast:bg-gray-800 rounded-lg p-1">
@@ -303,21 +305,21 @@ export default function Assignments() {
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Button size="sm" variant="outline">
+                  <Button2 size="sm" variant="outline">
                     <i className="ri-download-line mr-2 w-4 h-4 flex items-center justify-center"></i>
                     Export
-                  </Button>
-                  <Button size="sm" variant="outline">
+                  </Button2>
+                  <Button2 size="sm" variant="outline">
                     <i className="ri-filter-line mr-2 w-4 h-4 flex items-center justify-center"></i>
                     Filter
-                  </Button>
+                  </Button2>
                 </div>
               </div>
-            </Card>
+            </Card2>
           </div>
 
           {view === 'list' ? (
-            <Card>
+            <Card2>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
@@ -363,7 +365,7 @@ export default function Assignments() {
                         </td>
                         <td className="py-4 px-4 text-right">
                           <div className="flex items-center justify-end space-x-2">
-                            <Button
+                            <Button2
                               size="sm"
                               variant="ghost"
                               onClick={() => {
@@ -372,13 +374,13 @@ export default function Assignments() {
                               }}
                             >
                               <i className="ri-edit-line w-4 h-4 flex items-center justify-center"></i>
-                            </Button>
-                            <Button size="sm" variant="ghost">
+                            </Button2>
+                            <Button2 size="sm" variant="ghost">
                               <i className="ri-eye-line w-4 h-4 flex items-center justify-center"></i>
-                            </Button>
-                            <Button size="sm" variant="ghost">
+                            </Button2>
+                            <Button2 size="sm" variant="ghost">
                               <i className="ri-more-line w-4 h-4 flex items-center justify-center"></i>
-                            </Button>
+                            </Button2>
                           </div>
                         </td>
                       </tr>
@@ -386,11 +388,11 @@ export default function Assignments() {
                   </tbody>
                 </table>
               </div>
-            </Card>
+            </Card2>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredAssignments.map((assignment) => (
-                <Card key={assignment.id}>
+                <Card2 key={assignment.id}>
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <h3 className="font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-1">{assignment.title}</h3>
@@ -430,7 +432,7 @@ export default function Assignments() {
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button
+                    <Button2
                       size="sm"
                       variant="outline"
                       className="flex-1"
@@ -440,15 +442,15 @@ export default function Assignments() {
                       }}
                     >
                       Grade
-                    </Button>
-                    <Button size="sm" variant="ghost">
+                    </Button2>
+                    <Button2 size="sm" variant="ghost">
                       <i className="ri-eye-line w-4 h-4 flex items-center justify-center"></i>
-                    </Button>
-                    <Button size="sm" variant="ghost">
+                    </Button2>
+                    <Button2 size="sm" variant="ghost">
                       <i className="ri-more-line w-4 h-4 flex items-center justify-center"></i>
-                    </Button>
+                    </Button2>
                   </div>
-                </Card>
+                </Card2>
               ))}
             </div>
           )}

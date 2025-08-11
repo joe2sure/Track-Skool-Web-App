@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Button from '../../../components/ui/Button';
+import Button2 from '../../../components/ui/button2';
 import Input from '../../../components/ui/Input';
-import Card from '../../../components/ui/Card';
+import Card2 from '../../../components/ui/card2';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -126,9 +126,9 @@ export default function Login() {
             </Link>
           </div>
 
-          <Button type="submit" className="w-full" size="lg">
+          <Button2 type="submit" className="w-full" size="lg">
             Sign In
-          </Button>
+          </Button2>
         </form>
 
         <div className="mt-6 text-center">

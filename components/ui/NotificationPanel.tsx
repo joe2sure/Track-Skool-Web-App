@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import Card from "./Card"
-import Button from "./Button"
+import Card from "./card"
+import Button from "./button"
 
 interface Notification {
   id: string

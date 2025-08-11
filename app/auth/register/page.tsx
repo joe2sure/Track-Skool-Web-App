@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Button from '../../../components/ui/Button';
+import Button2 from '../../../components/ui/button2';
 import Input from '../../../components/ui/Input';
 
 export default function Register() {
@@ -218,9 +218,9 @@ export default function Register() {
             </label>
           </div>
 
-          <Button type="submit" className="w-full" size="lg">
+          <Button2 type="submit" className="w-full" size="lg">
             Create Account
-          </Button>
+          </Button2>
         </form>
 
         <div className="mt-6 text-center">

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from './ThemeProvider';
-import Button from './ui/Button';
+import Button from './ui/button';
 
 export default function Header() {
   const { theme, setTheme } = useTheme();

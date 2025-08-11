@@ -5,9 +5,9 @@ import type React from "react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import Button from "../../../components/ui/Button"
+import Button2 from "../../../components/ui/button2"
 import Input from "../../../components/ui/Input"
-import Card from "../../../components/ui/Card"
+import Card2 from "../../../components/ui/card2"
 
 // Define specific types for each credential type
 type StudentCredentials = { schoolId: string; studentId: string; password: string }
@@ -311,7 +311,7 @@ export default function PortalLogin() {
         </div>
 
         {/* Demo Credentials Card */}
-        <Card className="p-4 bg-purple-50 dark:bg-purple-900/20 border-purple-200 dark:border-purple-800 mb-6">
+        <Card2 className="p-4 bg-purple-50 dark:bg-purple-900/20 border-purple-200 dark:border-purple-800 mb-6">
           <h4 className="font-medium text-purple-900 dark:text-purple-100 mb-2">Demo Credentials:</h4>
           <div className="text-sm text-purple-800 dark:text-purple-200 space-y-1">
             {userType === "student" && <p>School ID: SCH001, Student ID: STU001, Password: student123</p>}
@@ -323,7 +323,7 @@ export default function PortalLogin() {
             {userType === "super_admin" && <p>Super Admin ID: SUP001, Password: super123</p>}
             {userType === "librarian" && <p>Librarian ID: LIB001, School ID: SCH001, Password: librarian123</p>}
           </div>
-        </Card>
+        </Card2>
 
         <form onSubmit={handleLogin} className="space-y-6">
           {renderLoginFields()}
@@ -378,9 +378,9 @@ export default function PortalLogin() {
             </Link>
           </div>
 
-          <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700" size="lg">
+          <Button2 type="submit" className="w-full bg-purple-600 hover:bg-purple-700" size="lg">
             Access Portal
-          </Button>
+          </Button2>
         </form>
 
         <div className="mt-6 text-center">
