@@ -3,8 +3,6 @@ import type { Metadata } from "next"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { ParentSidebar } from "@/components/dashboard/parent/parent-sidebar"
 import { ParentHeader } from "@/components/dashboard/parent/parent-header"
-// import { ParentSidebar } from "@/components/parent-sidebar"
-// import { ParentHeader } from "@/components/parent-header"
 
 export const metadata: Metadata = {
   title: "Parent Dashboard - EduManage",
@@ -30,6 +28,41 @@ export default function ParentDashboardLayout({
     </div>
   )
 }
+
+
+
+
+// import type React from "react"
+// import type { Metadata } from "next"
+// import { SidebarProvider } from "@/components/ui/sidebar"
+// import { ParentSidebar } from "@/components/dashboard/parent/parent-sidebar"
+// import { ParentHeader } from "@/components/dashboard/parent/parent-header"
+
+
+// export const metadata: Metadata = {
+//   title: "Parent Dashboard - EduManage",
+//   description: "Parent portal for school management system",
+// }
+
+// export default function ParentDashboardLayout({
+//   children,
+// }: {
+//   children: React.ReactNode
+// }) {
+//   return (
+//     <div className="min-h-screen bg-slate-900">
+//       <SidebarProvider defaultOpen={true}>
+//         <div className="flex min-h-screen">
+//           <ParentSidebar />
+//           <div className="flex-1 flex flex-col">
+//             <ParentHeader />
+//             <main className="flex-1 p-6">{children}</main>
+//           </div>
+//         </div>
+//       </SidebarProvider>
+//     </div>
+//   )
+// }
 
 
 

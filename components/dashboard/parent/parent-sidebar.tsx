@@ -8,11 +8,56 @@ import {
   SidebarMenuButton,
 } from "@/components/ui/sidebar"
 import { Home, User, Calendar, FileText, MessageSquare, Settings, LogOut } from "lucide-react"
+import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
+import { cn } from "@/lib/utils"
+
+const menuItems = [
+  {
+    title: "Dashboard",
+    href: "/dashboard/parent",
+    icon: Home,
+  },
+  {
+    title: "Child Progress",
+    href: "/dashboard/parent/child-progress",
+    icon: User,
+  },
+  {
+    title: "Attendance",
+    href: "/dashboard/parent/attendance",
+    icon: Calendar,
+  },
+  {
+    title: "Assignments",
+    href: "/dashboard/parent/assignments",
+    icon: FileText,
+  },
+  {
+    title: "Communication",
+    href: "/dashboard/parent/communication",
+    icon: MessageSquare,
+  },
+  {
+    title: "Settings",
+    href: "/dashboard/parent/settings",
+    icon: Settings,
+  },
+]
 
 export function ParentSidebar() {
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const handleLogout = () => {
+    localStorage.removeItem("userType")
+    localStorage.removeItem("userData")
+    router.push("/auth/dashboard-login")
+  }
+
   return (
-    <Sidebar>
-      <SidebarHeader>
+    <Sidebar className="bg-slate-900 border-slate-700">
+      <SidebarHeader className="border-b border-slate-700">
         <div className="flex items-center gap-2 px-4 py-2">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <i className="ri-graduation-cap-line text-white text-lg"></i>
@@ -20,46 +65,34 @@ export function ParentSidebar() {
           <span className="font-bold text-white">EduHub</span>
         </div>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="bg-slate-900">
         <SidebarMenu>
+          {menuItems.map((item) => {
+            const Icon = item.icon
+            const isActive = pathname === item.href
+
+            return (
+              <SidebarMenuItem key={item.href}>
+                <SidebarMenuButton
+                  asChild
+                  className={cn(
+                    "text-slate-300 hover:text-white hover:bg-slate-800",
+                    isActive && "bg-blue-600 text-white hover:bg-blue-700",
+                  )}
+                >
+                  <Link href={item.href}>
+                    <Icon className="w-4 h-4" />
+                    <span>{item.title}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            )
+          })}
           <SidebarMenuItem>
-            <SidebarMenuButton>
-              <Home className="w-4 h-4" />
-              <span>Dashboard</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton>
-              <User className="w-4 h-4" />
-              <span>Child Progress</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton>
-              <Calendar className="w-4 h-4" />
-              <span>Attendance</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton>
-              <FileText className="w-4 h-4" />
-              <span>Assignments</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton>
-              <MessageSquare className="w-4 h-4" />
-              <span>Communication</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton>
-              <Settings className="w-4 h-4" />
-              <span>Settings</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton>
+            <SidebarMenuButton
+              onClick={handleLogout}
+              className="text-slate-300 hover:text-white hover:bg-red-600 cursor-pointer"
+            >
               <LogOut className="w-4 h-4" />
               <span>Logout</span>
             </SidebarMenuButton>
