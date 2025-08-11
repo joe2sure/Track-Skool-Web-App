@@ -1,16 +1,16 @@
 "use client"
 
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
+// import { Input } from "@/components/ui/input"
+// import { Textarea } from "@/components/ui/textarea"
+// import { Label } from "@/components/ui/label"
+// import { Checkbox } from "@/components/ui/checkbox"
 import {
   Plus,
   Search,
@@ -28,6 +28,8 @@ import {
 } from "lucide-react"
 import { TeacherSidebar } from "@/components/dashboard/teacher/teacher-sidebar"
 import { TeacherHeader } from "@/components/dashboard/teacher/teacher-header"
+import { Input } from "@/components/ui/parent/input"
+import { Label } from "@/components/ui/parent/label"
 
 export default function TeacherAssignments() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -111,7 +113,7 @@ export default function TeacherAssignments() {
     },
   ]
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case "submitted":
         return "bg-green-100 text-green-800"
@@ -126,7 +128,7 @@ export default function TeacherAssignments() {
     }
   }
 
-  const getProgressColor = (percentage) => {
+  const getProgressColor = (percentage: number) => {
     if (percentage >= 80) return "bg-green-500"
     if (percentage >= 60) return "bg-yellow-500"
     return "bg-red-500"
@@ -236,7 +238,7 @@ export default function TeacherAssignments() {
                     <Input
                       placeholder="Search assignments..."
                       value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onChange={(e: { target: { value: SetStateAction<string> } }) => setSearchQuery(e.target.value)}
                       className="pl-10"
                     />
                   </div>
@@ -470,7 +472,7 @@ function CreateAssignmentForm({ onClose }) {
         <Input
           placeholder="Enter assignment title..."
           value={formData.title}
-          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+          onChange={(e: { target: { value: any } }) => setFormData({ ...formData, title: e.target.value })}
         />
       </div>
 
@@ -479,7 +481,7 @@ function CreateAssignmentForm({ onClose }) {
         <Textarea
           placeholder="Provide detailed instructions for the assignment..."
           value={formData.description}
-          onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+          onChange={(e: { target: { value: any } }) => setFormData({ ...formData, description: e.target.value })}
           rows={4}
         />
       </div>
@@ -490,7 +492,7 @@ function CreateAssignmentForm({ onClose }) {
           <Input
             type="date"
             value={formData.dueDate}
-            onChange={(e) => setFormData({ ...formData, dueDate: e.target.value })}
+            onChange={(e: { target: { value: any } }) => setFormData({ ...formData, dueDate: e.target.value })}
           />
         </div>
 
@@ -499,7 +501,7 @@ function CreateAssignmentForm({ onClose }) {
           <Input
             type="time"
             value={formData.dueTime}
-            onChange={(e) => setFormData({ ...formData, dueTime: e.target.value })}
+            onChange={(e: { target: { value: any } }) => setFormData({ ...formData, dueTime: e.target.value })}
           />
         </div>
       </div>
@@ -510,7 +512,7 @@ function CreateAssignmentForm({ onClose }) {
           <Input
             placeholder="100"
             value={formData.totalPoints}
-            onChange={(e) => setFormData({ ...formData, totalPoints: e.target.value })}
+            onChange={(e: { target: { value: any } }) => setFormData({ ...formData, totalPoints: e.target.value })}
           />
         </div>
 
@@ -552,7 +554,7 @@ function CreateAssignmentForm({ onClose }) {
   )
 }
 
-function ViewAssignmentContent({ assignment, onClose }) {
+function ViewAssignmentContent({  }) {
   const studentSubmissions = [
     {
       name: "John Davis",

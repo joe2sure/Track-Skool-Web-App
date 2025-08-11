@@ -3,13 +3,15 @@
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Checkbox } from "@/components/ui/checkbox"
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+// import { Input } from "@/components/ui/input"
+// import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Users, UserX, Clock, TrendingUp, Search, Download, Send, Save, Eye } from "lucide-react"
 import { TeacherSidebar } from "@/components/dashboard/teacher/teacher-sidebar"
 import { TeacherHeader } from "@/components/dashboard/teacher/teacher-header"
+import { Input } from "@/components/ui/parent/input"
+import { Avatar, AvatarFallback, AvatarFallback, AvatarImage } from "@/components/ui/parent/avatar"
 
 export default function TeacherAttendance() {
   const [selectedClass, setSelectedClass] = useState("grade-10a")
