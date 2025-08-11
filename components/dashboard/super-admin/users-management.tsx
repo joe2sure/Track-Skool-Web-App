@@ -2,11 +2,13 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+// import { Input } from "@/components/ui/input"
+// import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Search, Plus, Eye, Edit, MoreHorizontal } from "lucide-react"
+import { Input } from "@/components/ui/parent/input"
+import { Avatar, AvatarFallback } from "@/components/ui/parent/avatar"
 
 const statsData = [
   {
