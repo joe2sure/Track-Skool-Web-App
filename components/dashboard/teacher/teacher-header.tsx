@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+// import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import {
   DropdownMenu,
@@ -13,6 +13,8 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
 import { Search, Bell, MessageSquare, Settings, User, LogOut } from "lucide-react"
+import Input from "@/components/ui/Input"
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 
 export function TeacherHeader() {
   const [searchQuery, setSearchQuery] = useState("")
