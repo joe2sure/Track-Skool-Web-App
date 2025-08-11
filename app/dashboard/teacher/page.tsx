@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Header from "../../../components/Header"
-import Card from "../../../components/ui/card"
-import Button from "../../../components/ui/button"
+import Card2 from "../../../components/ui/card2"
+import Button2 from "../../../components/ui/button2"
 import { ThemeProvider } from "../../../components/ThemeProvider"
 
 export default function TeacherDashboard() {
@@ -41,7 +41,7 @@ export default function TeacherDashboard() {
 
           {/* Teacher Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <Card className="bg-gradient-to-br from-indigo-500 to-indigo-600 text-white">
+            <Card2 className="bg-gradient-to-br from-indigo-500 to-indigo-600 text-white">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-indigo-100 text-sm font-medium">Total Students</p>
@@ -51,9 +51,9 @@ export default function TeacherDashboard() {
                   <i className="ri-group-line text-2xl w-6 h-6 flex items-center justify-center"></i>
                 </div>
               </div>
-            </Card>
+            </Card2>
 
-            <Card className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white">
+            <Card2 className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-emerald-100 text-sm font-medium">Classes Today</p>
@@ -63,9 +63,9 @@ export default function TeacherDashboard() {
                   <i className="ri-calendar-check-line text-2xl w-6 h-6 flex items-center justify-center"></i>
                 </div>
               </div>
-            </Card>
+            </Card2>
 
-            <Card className="bg-gradient-to-br from-amber-500 to-amber-600 text-white">
+            <Card2 className="bg-gradient-to-br from-amber-500 to-amber-600 text-white">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-amber-100 text-sm font-medium">Pending Grades</p>
@@ -75,9 +75,9 @@ export default function TeacherDashboard() {
                   <i className="ri-file-edit-line text-2xl w-6 h-6 flex items-center justify-center"></i>
                 </div>
               </div>
-            </Card>
+            </Card2>
 
-            <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+            <Card2 className="bg-gradient-to-br from-purple-500 to-purple-600 text-white">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-purple-100 text-sm font-medium">Virtual Coins</p>
@@ -87,17 +87,17 @@ export default function TeacherDashboard() {
                   <i className="ri-coin-line text-2xl w-6 h-6 flex items-center justify-center"></i>
                 </div>
               </div>
-            </Card>
+            </Card2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Today's Classes */}
-            <Card>
+            <Card2>
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Today's Classes</h3>
-                <Button size="sm" variant="outline">
+                <Button2 size="sm" variant="outline">
                   View Schedule
-                </Button>
+                </Button2>
               </div>
               <div className="space-y-4">
                 {[
@@ -120,15 +120,15 @@ export default function TeacherDashboard() {
                   </div>
                 ))}
               </div>
-            </Card>
+            </Card2>
 
             {/* Recent Assignments */}
-            <Card>
+            <Card2>
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Recent Assignments</h3>
-                <Button size="sm" variant="outline">
+                <Button2 size="sm" variant="outline">
                   Create New
-                </Button>
+                </Button2>
               </div>
               <div className="space-y-4">
                 {[
@@ -178,34 +178,34 @@ export default function TeacherDashboard() {
                   </div>
                 ))}
               </div>
-            </Card>
+            </Card2>
           </div>
 
           {/* Teacher Tools and Actions */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <Card>
+            <Card2>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Actions</h3>
               <div className="space-y-3">
-                <Button className="w-full justify-start" variant="ghost">
+                <Button2 className="w-full justify-start" variant="ghost">
                   <i className="ri-file-add-line mr-3 w-4 h-4 flex items-center justify-center"></i>
                   Create Assignment
-                </Button>
-                <Button className="w-full justify-start" variant="ghost">
+                </Button2>
+                <Button2 className="w-full justify-start" variant="ghost">
                   <i className="ri-calendar-check-line mr-3 w-4 h-4 flex items-center justify-center"></i>
                   Take Attendance
-                </Button>
-                <Button className="w-full justify-start" variant="ghost">
+                </Button2>
+                <Button2 className="w-full justify-start" variant="ghost">
                   <i className="ri-edit-line mr-3 w-4 h-4 flex items-center justify-center"></i>
                   Grade Assignments
-                </Button>
-                <Button className="w-full justify-start" variant="ghost">
+                </Button2>
+                <Button2 className="w-full justify-start" variant="ghost">
                   <i className="ri-megaphone-line mr-3 w-4 h-4 flex items-center justify-center"></i>
                   Send Announcement
-                </Button>
+                </Button2>
               </div>
-            </Card>
+            </Card2>
 
-            <Card>
+            <Card2>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Class Performance</h3>
               <div className="space-y-4">
                 {[
@@ -233,9 +233,9 @@ export default function TeacherDashboard() {
                   </div>
                 ))}
               </div>
-            </Card>
+            </Card2>
 
-            <Card>
+            <Card2>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recent Messages</h3>
               <div className="space-y-3">
                 {[
@@ -250,7 +250,7 @@ export default function TeacherDashboard() {
                   </div>
                 ))}
               </div>
-            </Card>
+            </Card2>
           </div>
         </main>
       </div>

@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Header from '../../components/Header';
-import Card from '../../components/ui/card';
-import Button from '../../components/ui/button';
+import Card2 from '../../components/ui/card2';
+import Button2 from '../../components/ui/button2';
 import { ThemeProvider } from '../../components/ThemeProvider';
 
 export default function Dashboard() {
@@ -12,7 +12,7 @@ export default function Dashboard() {
   const StudentDashboard = () => (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+        <Card2 className="bg-gradient-to-br from-blue-500 to-blue-600 text-white">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-blue-100 text-sm font-medium">Current GPA</p>
@@ -22,9 +22,9 @@ export default function Dashboard() {
               <i className="ri-trophy-line text-2xl w-6 h-6 flex items-center justify-center"></i>
             </div>
           </div>
-        </Card>
+        </Card2>
 
-        <Card className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white">
+        <Card2 className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-emerald-100 text-sm font-medium">Attendance</p>
@@ -34,9 +34,9 @@ export default function Dashboard() {
               <i className="ri-calendar-check-line text-2xl w-6 h-6 flex items-center justify-center"></i>
             </div>
           </div>
-        </Card>
+        </Card2>
 
-        <Card className="bg-gradient-to-br from-amber-500 to-amber-600 text-white">
+        <Card2 className="bg-gradient-to-br from-amber-500 to-amber-600 text-white">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-amber-100 text-sm font-medium">Pending Tasks</p>
@@ -46,9 +46,9 @@ export default function Dashboard() {
               <i className="ri-task-line text-2xl w-6 h-6 flex items-center justify-center"></i>
             </div>
           </div>
-        </Card>
+        </Card2>
 
-        <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+        <Card2 className="bg-gradient-to-br from-purple-500 to-purple-600 text-white">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-purple-100 text-sm font-medium">Books Borrowed</p>
@@ -58,14 +58,14 @@ export default function Dashboard() {
               <i className="ri-book-open-line text-2xl w-6 h-6 flex items-center justify-center"></i>
             </div>
           </div>
-        </Card>
+        </Card2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card>
+        <Card2>
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white">Today's Schedule</h3>
-            <Button size="sm" variant="outline">View All</Button>
+            <Button2 size="sm" variant="outline">View All</Button2>
           </div>
           <div className="space-y-4">
             {[
@@ -86,12 +86,12 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-        </Card>
+        </Card2>
 
-        <Card>
+        <Card2>
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white">Recent Assignments</h3>
-            <Button size="sm" variant="outline">View All</Button>
+            <Button2 size="sm" variant="outline">View All</Button2>
           </div>
           <div className="space-y-4">
             {[
@@ -114,33 +114,33 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-        </Card>
+        </Card2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <Card>
+        <Card2>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">Quick Actions</h3>
           <div className="space-y-3">
-            <Button className="w-full justify-start" variant="ghost">
+            <Button2 className="w-full justify-start" variant="ghost">
               <i className="ri-calendar-line mr-3 w-4 h-4 flex items-center justify-center"></i>
               View Calendar
-            </Button>
-            <Button className="w-full justify-start" variant="ghost">
+            </Button2>
+            <Button2 className="w-full justify-start" variant="ghost">
               <i className="ri-file-text-line mr-3 w-4 h-4 flex items-center justify-center"></i>
               Submit Assignment
-            </Button>
-            <Button className="w-full justify-start" variant="ghost">
+            </Button2>
+            <Button2 className="w-full justify-start" variant="ghost">
               <i className="ri-book-line mr-3 w-4 h-4 flex items-center justify-center"></i>
               Library Catalog
-            </Button>
-            <Button className="w-full justify-start" variant="ghost">
+            </Button2>
+            <Button2 className="w-full justify-start" variant="ghost">
               <i className="ri-chat-3-line mr-3 w-4 h-4 flex items-center justify-center"></i>
               Contact Teacher
-            </Button>
+            </Button2>
           </div>
-        </Card>
+        </Card2>
 
-        <Card>
+        <Card2>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">Announcements</h3>
           <div className="space-y-3">
             {[
@@ -154,9 +154,9 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-        </Card>
+        </Card2>
 
-        <Card>
+        <Card2>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">Upcoming Events</h3>
           <div className="space-y-3">
             {[
@@ -170,7 +170,7 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-        </Card>
+        </Card2>
       </div>
     </div>
   );
