@@ -1,11 +1,13 @@
+// import { Input } from "@/components/ui/input"
+// import { Label } from "@/components/ui/label"
 "use client"
 
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { SettingsIcon, BookOpen, Users, Bell, Shield, Database, Save, RotateCcw } from "lucide-react"
+import { Label } from "@/components/ui/parent/label"
+import { Input } from "@/components/ui/parent/input"
 
 const settingsCategories = [
   { id: "general", name: "General", icon: SettingsIcon },
