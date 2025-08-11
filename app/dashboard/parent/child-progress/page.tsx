@@ -17,7 +17,7 @@ const performanceData = [
   { month: "May", gpa: 3.7, attendance: 96 },
 ]
 
-export default function ParentDashboard() {
+export default function ChildProgress() {
   return (
     <div className="space-y-6">
       <div>
