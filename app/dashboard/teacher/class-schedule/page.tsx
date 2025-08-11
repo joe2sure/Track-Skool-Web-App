@@ -1,15 +1,17 @@
+// import { Input } from "@/components/ui/input"
+// import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+// import { Label } from "@/components/ui/label"
 "use client"
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Label } from "@/components/ui/label"
 import { Plus, ChevronLeft, ChevronRight } from "lucide-react"
 import { TeacherSidebar } from "@/components/dashboard/teacher/teacher-sidebar"
 import { TeacherHeader } from "@/components/dashboard/teacher/teacher-header"
+import { Label } from "@/components/ui/parent/label"
+import { Input } from "@/components/ui/parent/input"
 
 export default function TeacherClassSchedule() {
   const [viewMode, setViewMode] = useState("calendar") // calendar or list

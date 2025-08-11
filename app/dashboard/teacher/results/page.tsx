@@ -1,15 +1,17 @@
+// import { Input } from "@/components/ui/input"
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 "use client"
 
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { BarChart3, TrendingUp, Users, AlertTriangle, Search, Download, MessageSquare, Eye } from "lucide-react"
 import { TeacherSidebar } from "@/components/dashboard/teacher/teacher-sidebar"
 import { TeacherHeader } from "@/components/dashboard/teacher/teacher-header"
+import { Input } from "@/components/ui/parent/input"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/parent/avatar"
 
 export default function TeacherResults() {
   const [selectedClass, setSelectedClass] = useState("all")
@@ -98,7 +100,7 @@ export default function TeacherResults() {
     },
   ]
 
-  const getGradeColor = (grade) => {
+  const getGradeColor = (grade: string) => {
     switch (grade) {
       case "A":
       case "A-":
@@ -122,7 +124,7 @@ export default function TeacherResults() {
     }
   }
 
-  const getProgressColor = (percentage) => {
+  const getProgressColor = (percentage: number) => {
     if (percentage >= 90) return "bg-green-500"
     if (percentage >= 80) return "bg-blue-500"
     if (percentage >= 70) return "bg-yellow-500"
@@ -321,7 +323,7 @@ export default function TeacherResults() {
                     <Input
                       placeholder="Search students..."
                       value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onChange={(e: { target: { value: SetStateAction<string> } }) => setSearchQuery(e.target.value)}
                       className="pl-10"
                     />
                   </div>
