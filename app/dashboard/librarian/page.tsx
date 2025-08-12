@@ -1,11 +1,6 @@
-// import { Sidebar } from "@/components/sidebar"
-// import { Header } from "@/components/header"
-// import { StatCard } from "@/components/stat-card"
-// import { Input } from "@/components/ui/input"
+
 "use client"
 
-// import { Button } from "@/components/ui/button"
-// import { Progress } from "@/components/ui/progress"
 import { Header } from "@/components/ui/librarian/header"
 import { Sidebar } from "@/components/ui/librarian/sidebar"
 import { StatCard } from "@/components/ui/librarian/stat-card"
@@ -118,7 +113,7 @@ export default function Dashboard() {
       author: "Dr. Mary Anderson",
       dueDate: "2/12/2024",
       daysLeft: "1 day left",
-      status: "Due Soon",
+      status: "DueSoon",
       statusColor: "bg-yellow-500",
     },
   ]

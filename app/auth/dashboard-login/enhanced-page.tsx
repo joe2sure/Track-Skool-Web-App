@@ -17,7 +17,7 @@ export default function EnhancedDashboardLogin() {
     teacherId: "",
     adminId: "",
     superAdminId: "",
-    librarianId: "", // Added librarian ID field
+    librarianId: "", 
     password: "",
     confirmPassword: "",
   })
@@ -100,11 +100,7 @@ export default function EnhancedDashboardLogin() {
       localStorage.setItem("userData", JSON.stringify(formData))
 
       // Navigate to appropriate dashboard
-      if (userType === "librarian") {
-        router.push("/")
-      } else {
-        router.push(`/dashboard/${userType}`)
-      }
+      router.push(`/dashboard/${userType}`)
     } else {
       alert("Invalid credentials. Please check the dummy credentials in the code.")
     }
@@ -429,6 +425,7 @@ export default function EnhancedDashboardLogin() {
 
 
 
+
 // "use client"
 
 // import type React from "react"
@@ -448,6 +445,7 @@ export default function EnhancedDashboardLogin() {
 //     teacherId: "",
 //     adminId: "",
 //     superAdminId: "",
+//     librarianId: "", // Added librarian ID field
 //     password: "",
 //     confirmPassword: "",
 //   })
@@ -455,13 +453,13 @@ export default function EnhancedDashboardLogin() {
 //   const [showPassword, setShowPassword] = useState(false)
 //   const router = useRouter()
 
-//   // Dummy credentials for testing
 //   const dummyCredentials = {
 //     student: { schoolId: "SCH001", studentId: "STU001", password: "student123" },
 //     parent: { schoolId: "SCH001", studentId: "STU001", parentId: "PAR001", password: "parent123" },
 //     teacher: { schoolId: "SCH001", teacherId: "TEA001", password: "teacher123" },
 //     "school-admin": { schoolId: "SCH001", adminId: "ADM001", password: "admin123" },
 //     "super-admin": { superAdminId: "SUPER001", password: "super123" },
+//     librarian: { schoolId: "SCH001", librarianId: "LIB001", password: "librarian123" },
 //   }
 
 //   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -514,6 +512,14 @@ export default function EnhancedDashboardLogin() {
 //         isValid = formData.superAdminId === cred.superAdminId && formData.password === cred.password
 //         break
 //       }
+//       case "librarian": {
+//         const cred = credentials as { schoolId: string; librarianId: string; password: string }
+//         isValid =
+//           formData.schoolId === cred.schoolId &&
+//           formData.librarianId === cred.librarianId &&
+//           formData.password === cred.password
+//         break
+//       }
 //     }
 
 //     if (isValid) {
@@ -522,7 +528,11 @@ export default function EnhancedDashboardLogin() {
 //       localStorage.setItem("userData", JSON.stringify(formData))
 
 //       // Navigate to appropriate dashboard
-//       router.push(`/dashboard/${userType}`)
+//       if (userType === "librarian") {
+//         router.push("/")
+//       } else {
+//         router.push(`/dashboard/${userType}`)
+//       }
 //     } else {
 //       alert("Invalid credentials. Please check the dummy credentials in the code.")
 //     }
@@ -664,6 +674,31 @@ export default function EnhancedDashboardLogin() {
 //             />
 //           </div>
 //         )
+//       case "librarian":
+//         return (
+//           <>
+//             <div>
+//               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">School ID</label>
+//               <Input
+//                 name="schoolId"
+//                 value={formData.schoolId}
+//                 onChange={handleChange}
+//                 placeholder="Enter school ID (SCH001)"
+//                 required
+//               />
+//             </div>
+//             <div>
+//               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Librarian ID</label>
+//               <Input
+//                 name="librarianId"
+//                 value={formData.librarianId}
+//                 onChange={handleChange}
+//                 placeholder="Enter librarian ID (LIB001)"
+//                 required
+//               />
+//             </div>
+//           </>
+//         )
 //       default:
 //         return null
 //     }
@@ -693,11 +728,10 @@ export default function EnhancedDashboardLogin() {
 //           </p>
 //         </div>
 
-//         {/* User Type Selection */}
 //         <div className="mb-6">
 //           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">I am a</label>
-//           <div className="grid grid-cols-2 gap-2 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
-//             {["student", "parent", "teacher", "school-admin", "super-admin"].map((type) => (
+//           <div className="grid grid-cols-3 gap-2 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
+//             {["student", "parent", "teacher", "school-admin", "super-admin", "librarian"].map((type) => (
 //               <button
 //                 key={type}
 //                 type="button"
@@ -726,6 +760,7 @@ export default function EnhancedDashboardLogin() {
 //                 {userType === "teacher" && <p>School ID: SCH001, Teacher ID: TEA001, Password: teacher123</p>}
 //                 {userType === "school-admin" && <p>School ID: SCH001, Admin ID: ADM001, Password: admin123</p>}
 //                 {userType === "super-admin" && <p>Super Admin ID: SUPER001, Password: super123</p>}
+//                 {userType === "librarian" && <p>School ID: SCH001, Librarian ID: LIB001, Password: librarian123</p>}
 //               </div>
 //             </Card2>
 //           )}
