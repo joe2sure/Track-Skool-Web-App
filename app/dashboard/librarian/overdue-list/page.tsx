@@ -1,8 +1,8 @@
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
-import { StatCard } from "@/components/stat-card"
+// import { Sidebar } from "@/components/sidebar"
+// import { Header } from "@/components/header"
+// import { StatCard } from "@/components/stat-card"
+// import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
@@ -19,6 +19,10 @@ import {
   Eye,
   Edit,
 } from "lucide-react"
+import { Sidebar } from "@/components/ui/librarian/sidebar"
+import { Header } from "@/components/ui/librarian/header"
+import { StatCard } from "@/components/ui/librarian/stat-card"
+import { Input } from "@/components/ui/parent/input"
 
 export default function OverdueListPage() {
   const overdueBooks = [
