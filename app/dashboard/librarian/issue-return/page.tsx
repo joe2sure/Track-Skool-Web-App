@@ -1,14 +1,19 @@
+// import { Sidebar } from "@/components/sidebar"
+// import { Header } from "@/components/header"
+// import { StatCard } from "@/components/stat-card"
+// import { Input } from "@/components/ui/input"
+// import { Textarea } from "@/components/ui/textarea"
 "use client"
 
 import { useState } from "react"
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
-import { StatCard } from "@/components/stat-card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BookCheck, BookOpen, Clock, AlertTriangle, Search, Calendar } from "lucide-react"
+import { Sidebar } from "@/components/ui/librarian/sidebar"
+import { Header } from "@/components/ui/librarian/header"
+import { StatCard } from "@/components/ui/librarian/stat-card"
+import { Input } from "@/components/ui/parent/input"
+import { Textarea } from "@/components/ui/teacher/textarea"
 
 export default function IssueReturnPage() {
   const [issueDate, setIssueDate] = useState("10/08/2025")
