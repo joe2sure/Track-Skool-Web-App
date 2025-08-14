@@ -1,140 +1,125 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-// import Header from "../../components/StudentHeader";
-import Header from "@/components/RoleBasedHeader/StudentHeader";
-import Card from "../../components/ui/Card";
-import Button from "../../components/ui/Button";
-import Input from "../../components/ui/Input";
-import { ThemeProvider } from "../../components/ThemeProvider";
-import Modal from "../../components/ui/Modal";
+import { useState } from 'react';
+import Header from '../../components/Header';
+import Card from '../../components/ui/card';
+import Button from '../../components/ui/button';
+import Input from '../../components/ui/Input';
+import { ThemeProvider } from '../../components/ThemeProvider';
+import Modal from '../../components/ui/Modal';
 
 export default function Library() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filterCategory, setFilterCategory] = useState("all");
-  const [filterAvailability, setFilterAvailability] = useState("all");
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterCategory, setFilterCategory] = useState('all');
+  const [filterAvailability, setFilterAvailability] = useState('all');
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   const [selectedBook, setSelectedBook] = useState<any>(null);
 
   const books = [
     {
       id: 1,
-      title: "To Kill a Mockingbird",
-      author: "Harper Lee",
-      isbn: "978-0-06-112008-4",
-      category: "Fiction",
+      title: 'To Kill a Mockingbird',
+      author: 'Harper Lee',
+      isbn: '978-0-06-112008-4',
+      category: 'Fiction',
       available: 3,
       total: 5,
-      location: "Section A, Shelf 12",
-      description:
-        "A classic novel about racial injustice and childhood innocence in the American South.",
+      location: 'Section A, Shelf 12',
+      description: 'A classic novel about racial injustice and childhood innocence in the American South.',
       publishedYear: 1960,
       pages: 376,
-      language: "English",
+      language: 'English'
     },
     {
       id: 2,
-      title: "The Great Gatsby",
-      author: "F. Scott Fitzgerald",
-      isbn: "978-0-7432-7356-5",
-      category: "Fiction",
+      title: 'The Great Gatsby',
+      author: 'F. Scott Fitzgerald',
+      isbn: '978-0-7432-7356-5',
+      category: 'Fiction',
       available: 0,
       total: 4,
-      location: "Section A, Shelf 8",
-      description:
-        "The story of Jay Gatsby and his pursuit of the American Dream in the Jazz Age.",
+      location: 'Section A, Shelf 8',
+      description: 'The story of Jay Gatsby and his pursuit of the American Dream in the Jazz Age.',
       publishedYear: 1925,
       pages: 180,
-      language: "English",
+      language: 'English'
     },
     {
       id: 3,
-      title: "Introduction to Algorithms",
-      author: "Thomas H. Cormen",
-      isbn: "978-0-262-03384-8",
-      category: "Computer Science",
+      title: 'Introduction to Algorithms',
+      author: 'Thomas H. Cormen',
+      isbn: '978-0-262-03384-8',
+      category: 'Computer Science',
       available: 2,
       total: 3,
-      location: "Section C, Shelf 5",
-      description: "Comprehensive guide to algorithms and data structures.",
+      location: 'Section C, Shelf 5',
+      description: 'Comprehensive guide to algorithms and data structures.',
       publishedYear: 2009,
       pages: 1312,
-      language: "English",
+      language: 'English'
     },
     {
       id: 4,
-      title: "Physics: Principles and Problems",
-      author: "Paul W. Zitzewitz",
-      isbn: "978-0-07-874524-1",
-      category: "Science",
+      title: 'Physics: Principles and Problems',
+      author: 'Paul W. Zitzewitz',
+      isbn: '978-0-07-874524-1',
+      category: 'Science',
       available: 5,
       total: 8,
-      location: "Section B, Shelf 15",
-      description:
-        "High school physics textbook covering fundamental principles.",
+      location: 'Section B, Shelf 15',
+      description: 'High school physics textbook covering fundamental principles.',
       publishedYear: 2012,
       pages: 912,
-      language: "English",
+      language: 'English'
     },
     {
       id: 5,
-      title: "World History: Patterns of Interaction",
-      author: "Roger B. Beck",
-      isbn: "978-0-547-49115-6",
-      category: "History",
+      title: 'World History: Patterns of Interaction',
+      author: 'Roger B. Beck',
+      isbn: '978-0-547-49115-6',
+      category: 'History',
       available: 1,
       total: 6,
-      location: "Section D, Shelf 3",
-      description:
-        "Comprehensive world history from ancient times to modern era.",
+      location: 'Section D, Shelf 3',
+      description: 'Comprehensive world history from ancient times to modern era.',
       publishedYear: 2012,
       pages: 1088,
-      language: "English",
+      language: 'English'
     },
     {
       id: 6,
-      title: "Calculus: Early Transcendentals",
-      author: "James Stewart",
-      isbn: "978-1-285-74155-0",
-      category: "Mathematics",
+      title: 'Calculus: Early Transcendentals',
+      author: 'James Stewart',
+      isbn: '978-1-285-74155-0',
+      category: 'Mathematics',
       available: 4,
       total: 6,
-      location: "Section C, Shelf 10",
-      description: "Advanced calculus textbook for college-level mathematics.",
+      location: 'Section C, Shelf 10',
+      description: 'Advanced calculus textbook for college-level mathematics.',
       publishedYear: 2015,
       pages: 1368,
-      language: "English",
-    },
+      language: 'English'
+    }
   ];
 
-  const categories = [
-    "all",
-    "Fiction",
-    "Science",
-    "Mathematics",
-    "History",
-    "Computer Science",
-  ];
+  const categories = ['all', 'Fiction', 'Science', 'Mathematics', 'History', 'Computer Science'];
 
-  const filteredBooks = books.filter((book) => {
-    const matchesSearch =
-      book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      book.author.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory =
-      filterCategory === "all" || book.category === filterCategory;
-    const matchesAvailability =
-      filterAvailability === "all" ||
-      (filterAvailability === "available" && book.available > 0) ||
-      (filterAvailability === "unavailable" && book.available === 0);
-
+  const filteredBooks = books.filter(book => {
+    const matchesSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         book.author.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = filterCategory === 'all' || book.category === filterCategory;
+    const matchesAvailability = filterAvailability === 'all' ||
+                              (filterAvailability === 'available' && book.available > 0) ||
+                              (filterAvailability === 'unavailable' && book.available === 0);
+    
     return matchesSearch && matchesCategory && matchesAvailability;
   });
 
   const CheckoutModal = () => {
     const [formData, setFormData] = useState({
-      studentId: "",
-      dueDate: "",
-      notes: "",
+      studentId: '',
+      dueDate: '',
+      notes: ''
     });
 
     return (
@@ -146,15 +131,9 @@ export default function Library() {
             className="w-16 h-24 object-top rounded"
           />
           <div className="flex-1">
-            <h4 className="font-semibold text-gray-900 dark:text-white high-contrast:text-white">
-              {selectedBook?.title}
-            </h4>
-            <p className="text-sm text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-              by {selectedBook?.author}
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-              ISBN: {selectedBook?.isbn}
-            </p>
+            <h4 className="font-semibold text-gray-900 dark:text-white high-contrast:text-white">{selectedBook?.title}</h4>
+            <p className="text-sm text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">by {selectedBook?.author}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">ISBN: {selectedBook?.isbn}</p>
             <p className="text-sm text-emerald-600 dark:text-emerald-400 high-contrast:text-emerald-300 mt-1">
               {selectedBook?.available} copies available
             </p>
@@ -167,9 +146,7 @@ export default function Library() {
           </label>
           <Input
             value={formData.studentId}
-            onChange={(e) =>
-              setFormData({ ...formData, studentId: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, studentId: e.target.value })}
             placeholder="Enter student ID"
           />
         </div>
@@ -181,9 +158,7 @@ export default function Library() {
           <Input
             type="date"
             value={formData.dueDate}
-            onChange={(e) =>
-              setFormData({ ...formData, dueDate: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, dueDate: e.target.value })}
           />
         </div>
 
@@ -193,9 +168,7 @@ export default function Library() {
           </label>
           <textarea
             value={formData.notes}
-            onChange={(e) =>
-              setFormData({ ...formData, notes: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
             placeholder="Additional notes..."
             rows={3}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm resize-none"
@@ -221,12 +194,8 @@ export default function Library() {
         <Header />
         <main className="px-6 py-8">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white high-contrast:text-white mb-2">
-              Library Management
-            </h1>
-            <p className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-              Search, browse and manage library books and resources
-            </p>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white high-contrast:text-white mb-2">Library Management</h1>
+            <p className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Search, browse and manage library books and resources</p>
           </div>
 
           <div className="mb-8">
@@ -245,7 +214,7 @@ export default function Library() {
                     />
                   </div>
                 </div>
-
+                
                 <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
                   <select
                     value={filterCategory}
@@ -254,11 +223,11 @@ export default function Library() {
                   >
                     {categories.map((category) => (
                       <option key={category} value={category}>
-                        {category === "all" ? "All Categories" : category}
+                        {category === 'all' ? 'All Categories' : category}
                       </option>
                     ))}
                   </select>
-
+                  
                   <select
                     value={filterAvailability}
                     onChange={(e) => setFilterAvailability(e.target.value)}
@@ -284,51 +253,41 @@ export default function Library() {
                         alt={book.title}
                         className="w-16 h-24 object-top rounded flex-shrink-0"
                       />
-
+                      
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-2">
                           <div>
-                            <h3 className="font-semibold text-gray-900 dark:text-white high-contrast:text-white text-sm">
-                              {book.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                              by {book.author}
-                            </p>
+                            <h3 className="font-semibold text-gray-900 dark:text-white high-contrast:text-white text-sm">{book.title}</h3>
+                            <p className="text-sm text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">by {book.author}</p>
                           </div>
-                          <span
-                            className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              book.available > 0
-                                ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300"
-                                : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300"
-                            }`}
-                          >
-                            {book.available > 0 ? "Available" : "Checked Out"}
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            book.available > 0 
+                              ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' 
+                              : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+                          }`}>
+                            {book.available > 0 ? 'Available' : 'Checked Out'}
                           </span>
                         </div>
-
+                        
                         <div className="space-y-1 mb-3">
                           <p className="text-xs text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                            <span className="font-medium">Category:</span>{" "}
-                            {book.category}
+                            <span className="font-medium">Category:</span> {book.category}
                           </p>
                           <p className="text-xs text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                            <span className="font-medium">Location:</span>{" "}
-                            {book.location}
+                            <span className="font-medium">Location:</span> {book.location}
                           </p>
                           <p className="text-xs text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                            <span className="font-medium">Available:</span>{" "}
-                            {book.available}/{book.total} copies
+                            <span className="font-medium">Available:</span> {book.available}/{book.total} copies
                           </p>
                           <p className="text-xs text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                            <span className="font-medium">ISBN:</span>{" "}
-                            {book.isbn}
+                            <span className="font-medium">ISBN:</span> {book.isbn}
                           </p>
                         </div>
 
                         <div className="flex space-x-2">
                           <Button
                             size="sm"
-                            variant={book.available > 0 ? "primary" : "outline"}
+                            variant={book.available > 0 ? 'primary' : 'outline'}
                             disabled={book.available === 0}
                             className="flex-1"
                             onClick={() => {
@@ -338,7 +297,7 @@ export default function Library() {
                               }
                             }}
                           >
-                            {book.available > 0 ? "Check Out" : "Unavailable"}
+                            {book.available > 0 ? 'Check Out' : 'Unavailable'}
                           </Button>
                           <Button size="sm" variant="ghost">
                             <i className="ri-eye-line w-4 h-4 flex items-center justify-center"></i>
@@ -354,12 +313,8 @@ export default function Library() {
                 <Card>
                   <div className="text-center py-8">
                     <i className="ri-book-line text-4xl text-gray-400 dark:text-gray-500 high-contrast:text-gray-400 mb-4 w-10 h-10 flex items-center justify-center mx-auto"></i>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-white high-contrast:text-white mb-2">
-                      No books found
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                      Try adjusting your search criteria or filters.
-                    </p>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white high-contrast:text-white mb-2">No books found</h3>
+                    <p className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Try adjusting your search criteria or filters.</p>
                   </div>
                 </Card>
               )}
@@ -367,54 +322,31 @@ export default function Library() {
 
             <div>
               <Card>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">
-                  Library Stats
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">Library Stats</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                      Total Books
-                    </span>
-                    <span className="font-semibold text-gray-900 dark:text-white high-contrast:text-white">
-                      {books.reduce((sum, book) => sum + book.total, 0)}
-                    </span>
+                    <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Total Books</span>
+                    <span className="font-semibold text-gray-900 dark:text-white high-contrast:text-white">{books.reduce((sum, book) => sum + book.total, 0)}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                      Available
-                    </span>
-                    <span className="font-semibold text-emerald-600">
-                      {books.reduce((sum, book) => sum + book.available, 0)}
-                    </span>
+                    <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Available</span>
+                    <span className="font-semibold text-emerald-600">{books.reduce((sum, book) => sum + book.available, 0)}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                      Checked Out
-                    </span>
-                    <span className="font-semibold text-red-600">
-                      {books.reduce(
-                        (sum, book) => sum + (book.total - book.available),
-                        0
-                      )}
-                    </span>
+                    <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Checked Out</span>
+                    <span className="font-semibold text-red-600">{books.reduce((sum, book) => sum + (book.total - book.available), 0)}</span>
                   </div>
                   <div className="pt-4 border-t border-gray-200 dark:border-gray-700 high-contrast:border-gray-400">
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">
-                        Categories
-                      </span>
-                      <span className="font-semibold text-blue-600">
-                        {categories.length - 1}
-                      </span>
+                      <span className="text-gray-600 dark:text-gray-300 high-contrast:text-gray-200">Categories</span>
+                      <span className="font-semibold text-blue-600">{categories.length - 1}</span>
                     </div>
                   </div>
                 </div>
               </Card>
 
               <Card className="mt-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">
-                  Popular Books
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">Popular Books</h3>
                 <div className="space-y-3">
                   {books.slice(0, 3).map((book) => (
                     <div key={book.id} className="flex items-center space-x-3">
@@ -424,12 +356,8 @@ export default function Library() {
                         className="w-8 h-12 object-top rounded flex-shrink-0"
                       />
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-medium text-gray-900 dark:text-white high-contrast:text-white truncate">
-                          {book.title}
-                        </h4>
-                        <p className="text-xs text-gray-600 dark:text-gray-300 high-contrast:text-gray-200 truncate">
-                          {book.author}
-                        </p>
+                        <h4 className="text-sm font-medium text-gray-900 dark:text-white high-contrast:text-white truncate">{book.title}</h4>
+                        <p className="text-xs text-gray-600 dark:text-gray-300 high-contrast:text-gray-200 truncate">{book.author}</p>
                       </div>
                     </div>
                   ))}
@@ -437,39 +365,21 @@ export default function Library() {
               </Card>
 
               <Card className="mt-6">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">
-                  Quick Actions
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white high-contrast:text-white mb-4">Quick Actions</h3>
                 <div className="space-y-2">
-                  <Button
-                    className="w-full justify-start"
-                    variant="ghost"
-                    size="sm"
-                  >
+                  <Button className="w-full justify-start" variant="ghost" size="sm">
                     <i className="ri-book-add-line mr-2 w-4 h-4 flex items-center justify-center"></i>
                     Add New Book
                   </Button>
-                  <Button
-                    className="w-full justify-start"
-                    variant="ghost"
-                    size="sm"
-                  >
+                  <Button className="w-full justify-start" variant="ghost" size="sm">
                     <i className="ri-file-list-3-line mr-2 w-4 h-4 flex items-center justify-center"></i>
                     View All Checkouts
                   </Button>
-                  <Button
-                    className="w-full justify-start"
-                    variant="ghost"
-                    size="sm"
-                  >
+                  <Button className="w-full justify-start" variant="ghost" size="sm">
                     <i className="ri-time-line mr-2 w-4 h-4 flex items-center justify-center"></i>
                     Overdue Books
                   </Button>
-                  <Button
-                    className="w-full justify-start"
-                    variant="ghost"
-                    size="sm"
-                  >
+                  <Button className="w-full justify-start" variant="ghost" size="sm">
                     <i className="ri-file-chart-line mr-2 w-4 h-4 flex items-center justify-center"></i>
                     Generate Report
                   </Button>

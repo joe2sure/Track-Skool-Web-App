@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Button from '../../../components/ui/Button';
+import Button2 from '../../../components/ui/button2';
 import Input from '../../../components/ui/Input';
 
 export default function ForgotPassword() {
@@ -59,9 +59,9 @@ export default function ForgotPassword() {
               </div>
             </div>
 
-            <Button type="submit" className="w-full" size="lg">
+            <Button2 type="submit" className="w-full" size="lg">
               Send Reset Link
-            </Button>
+            </Button2>
           </form>
         ) : (
           <div className="text-center space-y-6">
@@ -74,9 +74,9 @@ export default function ForgotPassword() {
               </p>
             </div>
             
-            <Button onClick={() => setSubmitted(false)} variant="outline" className="w-full">
+            <Button2 onClick={() => setSubmitted(false)} variant="outline" className="w-full">
               Try Another Email
-            </Button>
+            </Button2>
           </div>
         )}
 
