@@ -178,7 +178,7 @@ export default function TeacherResults() {
 
         <main className="flex-1 overflow-y-auto p-6">
           {/* Header */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="grid lg:flex gap-3 lg:gap-0 items-center justify-between mb-6">
             <div>
               <h1 className="text-2xl font-bold text-gray-900">
                 Academic Results
@@ -189,8 +189,8 @@ export default function TeacherResults() {
               </p>
             </div>
 
-            <div className="flex items-center space-x-3">
-              <Button className="bg-green-600 hover:bg-green-700">
+            <div className="grid lg:flex gap-3 lg:gap-0 items-center space-x-3">
+              <Button className="bg-green-600 hover:bg-green-700 w-full">
                 <BarChart3 className="w-4 h-4 mr-2" />
                 Generate Report
               </Button>

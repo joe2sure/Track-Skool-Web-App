@@ -4,7 +4,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/parent/input"
 import { Bell, Search, User, Menu, X } from "lucide-react"
 
-export function ParentHeader() {
+interface ParentHeaderProps {
+  onMenuToggle?: () => void
+}
+
+export function ParentHeader({ onMenuToggle }: ParentHeaderProps) {
+
   const [showSearch, setShowSearch] = useState(false)
 
   return (
@@ -12,12 +17,16 @@ export function ParentHeader() {
       <div className="flex items-center justify-between">
         {/* Left - Title */}
         <div className="flex items-center gap-3">
-          <button
-            className="md:hidden text-gray-300 hover:text-white"
-            aria-label="Toggle menu"
+
+          {/* Menu icon (only visible on small screens) */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
+            onClick={onMenuToggle}
           >
-            <Menu className="w-6 h-6" />
-          </button>
+            <Menu className="w-6 h-6 text-white" />
+          </Button>
           <h1 className="text-lg md:text-xl font-semibold text-white">Parent Dashboard</h1>
         </div>
 

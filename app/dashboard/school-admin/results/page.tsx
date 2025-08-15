@@ -8,7 +8,7 @@ export default function ResultsPage() {
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="grid lg:flex gap-3 lg:gap-0 items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Results</h1>
           <p className="text-gray-600 dark:text-gray-400">View and manage academic results and performance</p>

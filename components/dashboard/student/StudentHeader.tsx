@@ -1,37 +1,60 @@
-"use client"
+"use client";
 
-import { Bell, Moon, Sun, User } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Badge } from "@/components/ui/badge"
-import { SidebarTrigger } from "@/components/ui/sidebar"
-import { useState, useEffect } from "react"
+import { Bell, Moon, Sun, User, Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Badge } from "@/components/ui/badge";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { useState, useEffect } from "react";
 
-export function StudentHeader() {
-  const [theme, setTheme] = useState("light")
-  const [userData, setUserData] = useState<any>(null)
+interface StudentHeaderProps {
+  onMenuToggle?: () => void;
+}
+
+export function StudentHeader({ onMenuToggle }: StudentHeaderProps) {
+  const [theme, setTheme] = useState("light");
+  const [userData, setUserData] = useState<any>(null);
 
   useEffect(() => {
-    const storedUserData = localStorage.getItem("userData")
+    const storedUserData = localStorage.getItem("userData");
     if (storedUserData) {
-      setUserData(JSON.parse(storedUserData))
+      setUserData(JSON.parse(storedUserData));
     }
-  }, [])
+  }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <header className="border-b bg-white px-6 py-4">
       <div className="flex items-center justify-between">
+        {/* Menu icon (only visible on small screens) */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className=""
+          onClick={onMenuToggle}
+        >
+          <Menu className="w-6 h-6 lg:hidden" />
+        </Button>
+
         <div className="flex items-center gap-4">
           <SidebarTrigger />
         </div>
 
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" onClick={toggleTheme}>
-            {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+            {theme === "light" ? (
+              <Moon className="h-4 w-4" />
+            ) : (
+              <Sun className="h-4 w-4" />
+            )}
           </Button>
 
           <Button variant="ghost" size="icon" className="relative">
@@ -59,5 +82,5 @@ export function StudentHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }
