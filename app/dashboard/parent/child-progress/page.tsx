@@ -21,7 +21,7 @@ export default function ChildProgress() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-white">Child Progress</h1>
+        <h1 className="lg:text-3xl text-xl font-bold text-white">Child Progress</h1>
         <p className="text-slate-400 mt-1">Track your children's academic development and achievements</p>
       </div>
 
@@ -30,7 +30,7 @@ export default function ChildProgress() {
         <div className="lg:col-span-2">
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle className="text-white">Child Progress Overview</CardTitle>
+              <CardTitle className="text-white text-xl lg:text-3xl">Child Progress Overview</CardTitle>
               <div className="flex gap-2">
                 <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                   Emma
@@ -106,8 +106,8 @@ export default function ChildProgress() {
           {/* Academic Performance Chart */}
           <Card className="bg-slate-800 border-slate-700 mt-6">
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle className="text-white">Academic Performance</CardTitle>
-              <div className="flex gap-2">
+              <CardTitle className="text-white text-xl lg:text-3xl">Academic Performance</CardTitle>
+              <div className="lg:flex gap-2 grid grid-cols-2">
                 <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                   Trends
                 </Button>

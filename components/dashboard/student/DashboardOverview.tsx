@@ -260,7 +260,7 @@ export function DashboardOverview() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center gap-4 mb-4">
+          <div className="grid grid-cols-2 lg:flex items-center gap-4 mb-4">
             <Button variant="outline" size="sm">
               <BarChart3 className="h-4 w-4 mr-2" />
               Explain Calculus

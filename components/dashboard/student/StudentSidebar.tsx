@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useRouter, usePathname } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
@@ -9,8 +9,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/sidebar";
+import { Button } from "@/components/ui/button";
 import {
   LayoutDashboard,
   FileText,
@@ -23,8 +23,9 @@ import {
   HelpCircle,
   Settings,
   LogOut,
-} from "lucide-react"
-import Link from "next/link"
+  X,
+} from "lucide-react";
+import Link from "next/link";
 
 const menuItems = [
   {
@@ -77,26 +78,41 @@ const menuItems = [
     icon: Settings,
     href: "/dashboard/student/settings",
   },
-]
+];
 
-export function StudentSidebar() {
-  const pathname = usePathname()
-  const router = useRouter()
+export function StudentSidebar({
+  isOpen,
+  onToggleSidebar,
+}: {
+  isOpen: boolean;
+  onToggleSidebar: () => void;
+}) {
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleLogout = () => {
-    localStorage.removeItem("userType")
-    localStorage.removeItem("userData")
-    router.push("/")
-  }
+    localStorage.removeItem("userType");
+    localStorage.removeItem("userData");
+    router.push("/");
+  };
 
   return (
-    <Sidebar className="border-r">
+    <Sidebar className="border-r z-50">
       <SidebarHeader className="p-4">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">E</span>
           </div>
           <span className="font-bold text-xl text-blue-600">EduPortal</span>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
+            onClick={onToggleSidebar}
+          >
+            <X className="w-5 h-5 flex lg:hidden" />
+          </Button>
         </div>
       </SidebarHeader>
 
@@ -104,8 +120,15 @@ export function StudentSidebar() {
         <SidebarMenu>
           {menuItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <SidebarMenuButton asChild isActive={pathname === item.href} className="w-full justify-start">
-                <Link href={item.href} className="flex items-center gap-3 px-3 py-2">
+              <SidebarMenuButton
+                asChild
+                isActive={pathname === item.href}
+                className="w-full justify-start"
+              >
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-3 px-3 py-2"
+                >
                   <item.icon className="h-4 w-4" />
                   <span>{item.title}</span>
                 </Link>
@@ -126,5 +149,5 @@ export function StudentSidebar() {
         </Button>
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }

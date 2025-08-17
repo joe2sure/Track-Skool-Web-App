@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Sidebar,
   SidebarContent,
@@ -6,11 +6,21 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
-} from "@/components/ui/sidebar"
-import { Home, User, Calendar, FileText, MessageSquare, Settings, LogOut } from "lucide-react"
-import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
-import { cn } from "@/lib/utils"
+} from "@/components/ui/sidebar";
+import {
+  Home,
+  User,
+  Calendar,
+  FileText,
+  MessageSquare,
+  Settings,
+  LogOut,
+  X,
+} from "lucide-react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const menuItems = [
   {
@@ -43,41 +53,61 @@ const menuItems = [
     href: "/dashboard/parent/settings",
     icon: Settings,
   },
-]
+];
 
-export function ParentSidebar() {
-  const pathname = usePathname()
-  const router = useRouter()
+export function ParentSidebar({
+  isOpen,
+  onToggleSidebar,
+}: {
+  isOpen: boolean;
+  onToggleSidebar: () => void;
+}) {
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleLogout = () => {
-    localStorage.removeItem("userType")
-    localStorage.removeItem("userData")
-    router.push("/auth/dashboard-login")
-  }
+    localStorage.removeItem("userType");
+    localStorage.removeItem("userData");
+    router.push("/auth/dashboard-login");
+  };
 
   return (
+    // <div
+    //   className={`absolute lg:relative w-3/4 lg:w-80 left-0 h-full bg-white border-r border-gray-200 flex flex-col shadow-lg transition-transform duration-300 z-50
+    //     ${isOpen ? "translate-x-0" : "-translate-x-full"}
+    //   `}
+    // ></div>
     <Sidebar className="bg-slate-900 border-slate-700">
-      <SidebarHeader className="border-b border-slate-700">
+      <SidebarHeader className="border-b border-slate-700 bg-slate-300 h-18 flex justify-center">
         <div className="flex items-center gap-2 px-4 py-2">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
             <i className="ri-graduation-cap-line text-white text-lg"></i>
           </div>
-          <span className="font-bold text-white">EduHub</span>
+          <span className="font-bold text-blue-600">EduHub</span>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
+            onClick={onToggleSidebar}
+          >
+            <X className="w-5 h-5 flex lg:hidden" />
+          </Button>
         </div>
       </SidebarHeader>
-      <SidebarContent className="bg-slate-900">
+      <SidebarContent className="bg-slate-900 pt-6">
         <SidebarMenu>
           {menuItems.map((item) => {
-            const Icon = item.icon
-            const isActive = pathname === item.href
+            const Icon = item.icon;
+            const isActive = pathname === item.href;
 
             return (
               <SidebarMenuItem key={item.href}>
                 <SidebarMenuButton
                   asChild
                   className={cn(
-                    "text-slate-300 hover:text-white hover:bg-slate-800",
-                    isActive && "bg-blue-600 text-white hover:bg-blue-700",
+                    "text-slate-300  hover:text-white hover:bg-slate-800",
+                    isActive && "bg-blue-600 text-white hover:bg-blue-700"
                   )}
                 >
                   <Link href={item.href}>
@@ -86,7 +116,7 @@ export function ParentSidebar() {
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-            )
+            );
           })}
           <SidebarMenuItem>
             <SidebarMenuButton
@@ -100,12 +130,8 @@ export function ParentSidebar() {
         </SidebarMenu>
       </SidebarContent>
     </Sidebar>
-  )
+  );
 }
-
-
-
-
 
 // "use client"
 

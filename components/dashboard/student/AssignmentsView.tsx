@@ -147,8 +147,8 @@ export function AssignmentsView() {
       </div>
 
       {/* Filters and View Toggle */}
-      <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-        <div className="flex gap-4">
+      <div className="grid grid-cols-2 lg:flex flex-col lg:gap-4 gap-15 items-start lg:items-center justify-between">
+        <div className="grid lg:flex gap-4">
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium">Subject:</span>
             <Select value={subjectFilter} onValueChange={setSubjectFilter}>
@@ -260,35 +260,45 @@ export function AssignmentsView() {
       ) : (
         <Card>
           <CardContent className="p-0">
-            <div className="divide-y">
-              {assignments.map((assignment) => (
-                <div key={assignment.id} className="p-4 hover:bg-gray-50">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 flex-1">
-                      {getStatusIcon(assignment.status)}
-                      <div className="flex-1">
-                        <h3 className="font-semibold">{assignment.title}</h3>
-                        <p className="text-sm text-gray-600">{assignment.description}</p>
-                        <div className="flex items-center gap-4 mt-2">
-                          <Badge variant="outline" className="text-xs">
-                            {assignment.subject}
-                          </Badge>
-                          <span className="text-sm text-gray-500">{assignment.points} points</span>
-                          <span className="text-sm text-gray-500">{assignment.dueDate}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {getStatusBadge(assignment.status)}
-                      <Button size="sm" variant="outline">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+  <div className="divide-y">
+    {assignments.map((assignment) => (
+      <div
+        key={assignment.id}
+        className="p-4 hover:bg-gray-50"
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          {/* Left section */}
+          <div className="flex items-start sm:items-center gap-4 flex-1">
+            {getStatusIcon(assignment.status)}
+            <div className="flex-1">
+              <h3 className="font-semibold">{assignment.title}</h3>
+              <p className="text-sm text-gray-600">{assignment.description}</p>
+
+              <div className="flex flex-wrap items-center gap-2 mt-2">
+                <Badge variant="outline" className="text-xs">
+                  {assignment.subject}
+                </Badge>
+                <span className="text-sm text-gray-500">
+                  {assignment.points} points
+                </span>
+                <span className="text-sm text-gray-500">{assignment.dueDate}</span>
+              </div>
             </div>
-          </CardContent>
+          </div>
+
+          {/* Right section */}
+          <div className="flex items-center gap-2 sm:self-start">
+            {getStatusBadge(assignment.status)}
+            <Button size="sm" variant="outline">
+              <Eye className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</CardContent>
+
         </Card>
       )}
     </div>

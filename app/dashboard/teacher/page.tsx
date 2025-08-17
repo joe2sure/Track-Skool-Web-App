@@ -1,15 +1,32 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Calendar, Users, FileText, AlertTriangle, AlertCircle, Edit, CheckCheck, Bell, Send } from "lucide-react"
-import { TeacherSidebar } from "@/components/dashboard/teacher/teacher-sidebar"
-import { TeacherHeader } from "@/components/dashboard/teacher/teacher-header"
+import { useState, useEffect } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Calendar,
+  Users,
+  FileText,
+  AlertTriangle,
+  AlertCircle,
+  Edit,
+  CheckCheck,
+  Bell,
+  Send,
+} from "lucide-react";
+import { TeacherSidebar } from "@/components/dashboard/teacher/teacher-sidebar";
+import { TeacherHeader } from "@/components/dashboard/teacher/teacher-header";
+import useLargeScreen from "@/hooks/useLargeScreen";
 
 export default function TeacherDashboard() {
-  const [selectedDate] = useState(new Date())
+  const [selectedDate] = useState(new Date());
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const isLargeScreen = useLargeScreen();
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
 
   const todaySchedule = [
     {
@@ -30,7 +47,7 @@ export default function TeacherDashboard() {
       room: "Room 204",
       status: "upcoming",
     },
-  ]
+  ];
 
   const recentSubmissions = [
     {
@@ -57,22 +74,24 @@ export default function TeacherDashboard() {
       total: 22,
       status: "overdue",
     },
-  ]
+  ];
 
   const announcements = [
     {
       title: "Fire Drill Schedule",
-      message: "Emergency drill scheduled for tomorrow at 10:30 AM. Please prepare your classes.",
+      message:
+        "Emergency drill scheduled for tomorrow at 10:30 AM. Please prepare your classes.",
       time: "2 hours ago",
       type: "alert",
     },
     {
       title: "Parent-Teacher Conference",
-      message: "Reminder: Conference meetings start next week. Check your schedule.",
+      message:
+        "Reminder: Conference meetings start next week. Check your schedule.",
       time: "1 day ago",
       type: "info",
     },
-  ]
+  ];
 
   const upcomingEvents = [
     {
@@ -93,7 +112,7 @@ export default function TeacherDashboard() {
       month: "Mar",
       location: "March 28 - April 4, 2025",
     },
-  ]
+  ];
 
   const attendanceData = [
     { day: "Mon", grade10A: 95, grade11B: 88, grade12A: 92 },
@@ -101,37 +120,61 @@ export default function TeacherDashboard() {
     { day: "Wed", grade10A: 94, grade11B: 85, grade12A: 91 },
     { day: "Thu", grade10A: 96, grade11B: 92, grade12A: 88 },
     { day: "Fri", grade10A: 89, grade11B: 87, grade12A: 90 },
-  ]
+  ];
 
   return (
     <div className="flex h-screen bg-gray-50">
-      <TeacherSidebar />
+      {(isLargeScreen || isSidebarOpen) && (
+        <TeacherSidebar
+          isOpen={isLargeScreen || isSidebarOpen}
+          onToggleSidebar={toggleSidebar}
+        />
+      )}
+
+      {/*opaque div On smaller screens */}
+      {isSidebarOpen && (
+        <div
+          className="fixed inset-0 top-0 bg-black/70 z-40 lg:hidden"
+          onClick={toggleSidebar}
+        />
+      )}
 
       <div className="flex-1 flex flex-col overflow-hidden">
-        <TeacherHeader />
+        <TeacherHeader onMenuToggle={toggleSidebar} />
 
         <main className="flex-1 overflow-y-auto">
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-purple-700 text-white p-8">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold mb-2">Welcome back, Sarah!</h1>
-                <p className="text-blue-100">Ready to inspire young minds today? You have 5 classes scheduled.</p>
+                <h1 className="text-3xl font-bold mb-2">
+                  Welcome back, Sarah!
+                </h1>
+                <p className="text-blue-100">
+                  Ready to inspire young minds today? You have 5 classes
+                  scheduled.
+                </p>
               </div>
               <div className="hidden md:block">
-                <img src="/teacher-illustration.png" alt="Teacher illustration" className="opacity-80" />
+                <img
+                  src="/teacher-illustration.png"
+                  alt="Teacher illustration"
+                  className="opacity-80"
+                />
               </div>
             </div>
           </div>
 
-          <div className="p-6 space-y-6">
+          <div className="lg:p-6 p-3 space-y-6">
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Total Students</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Total Students
+                      </p>
                       <p className="text-3xl font-bold text-gray-900">156</p>
                     </div>
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
@@ -145,7 +188,9 @@ export default function TeacherDashboard() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Classes Today</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Classes Today
+                      </p>
                       <p className="text-3xl font-bold text-gray-900">5</p>
                     </div>
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
@@ -159,7 +204,9 @@ export default function TeacherDashboard() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Pending Reviews</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Pending Reviews
+                      </p>
                       <p className="text-3xl font-bold text-gray-900">23</p>
                     </div>
                     <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
@@ -173,7 +220,9 @@ export default function TeacherDashboard() {
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-600">Attendance Alerts</p>
+                      <p className="text-sm font-medium text-gray-600">
+                        Attendance Alerts
+                      </p>
                       <p className="text-3xl font-bold text-gray-900">8</p>
                     </div>
                     <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
@@ -188,18 +237,24 @@ export default function TeacherDashboard() {
               {/* Today's Schedule */}
               <Card className="lg:col-span-1">
                 <CardHeader>
-                  <CardTitle className="text-lg font-semibold">Today's Schedule</CardTitle>
+                  <CardTitle className="text-lg font-semibold">
+                    Today's Schedule
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {todaySchedule.map((schedule, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div
                         className={`w-1 h-16 rounded-full ${
-                          schedule.status === "current" ? "bg-blue-500" : "bg-gray-300"
+                          schedule.status === "current"
+                            ? "bg-blue-500"
+                            : "bg-gray-300"
                         }`}
                       />
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-900">{schedule.subject}</h4>
+                        <h4 className="font-medium text-gray-900">
+                          {schedule.subject}
+                        </h4>
                         <p className="text-sm text-gray-600">{schedule.time}</p>
                         <p className="text-sm text-gray-500">{schedule.room}</p>
                       </div>
@@ -211,14 +266,18 @@ export default function TeacherDashboard() {
               {/* Announcements */}
               <Card className="lg:col-span-1">
                 <CardHeader>
-                  <CardTitle className="text-lg font-semibold">Announcements</CardTitle>
+                  <CardTitle className="text-lg font-semibold">
+                    Announcements
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {announcements.map((announcement, index) => (
                     <div
                       key={index}
                       className={`p-3 rounded-lg border-l-4 ${
-                        announcement.type === "alert" ? "bg-red-50 border-red-400" : "bg-blue-50 border-blue-400"
+                        announcement.type === "alert"
+                          ? "bg-red-50 border-red-400"
+                          : "bg-blue-50 border-blue-400"
                       }`}
                     >
                       <div className="flex items-start space-x-2">
@@ -228,9 +287,15 @@ export default function TeacherDashboard() {
                           <AlertCircle className="w-4 h-4 text-blue-500 mt-0.5" />
                         )}
                         <div className="flex-1">
-                          <h4 className="font-medium text-gray-900 text-sm">{announcement.title}</h4>
-                          <p className="text-xs text-gray-600 mt-1">{announcement.message}</p>
-                          <p className="text-xs text-gray-500 mt-1">{announcement.time}</p>
+                          <h4 className="font-medium text-gray-900 text-sm">
+                            {announcement.title}
+                          </h4>
+                          <p className="text-xs text-gray-600 mt-1">
+                            {announcement.message}
+                          </p>
+                          <p className="text-xs text-gray-500 mt-1">
+                            {announcement.time}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -241,20 +306,33 @@ export default function TeacherDashboard() {
               {/* Upcoming Events */}
               <Card className="lg:col-span-1">
                 <CardHeader>
-                  <CardTitle className="text-lg font-semibold">Upcoming Events</CardTitle>
+                  <CardTitle className="text-lg font-semibold">
+                    Upcoming Events
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {upcomingEvents.map((event, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <div
+                      key={index}
+                      className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg"
+                    >
                       <div className="text-center">
                         <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <span className="text-sm font-bold text-blue-600">{event.date}</span>
+                          <span className="text-sm font-bold text-blue-600">
+                            {event.date}
+                          </span>
                         </div>
-                        <span className="text-xs text-gray-500">{event.month}</span>
+                        <span className="text-xs text-gray-500">
+                          {event.month}
+                        </span>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-900 text-sm">{event.title}</h4>
-                        <p className="text-xs text-gray-600">{event.location}</p>
+                        <h4 className="font-medium text-gray-900 text-sm">
+                          {event.title}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {event.location}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -266,22 +344,29 @@ export default function TeacherDashboard() {
               {/* Recent Submissions */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg font-semibold">Recent Submissions</CardTitle>
+                  <CardTitle className="text-lg font-semibold">
+                    Recent Submissions
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {recentSubmissions.map((submission, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <div
+                      key={index}
+                      className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg"
+                    >
                       <div
                         className={`w-3 h-3 rounded-full ${
                           submission.status === "submitted"
                             ? "bg-green-500"
                             : submission.status === "pending"
-                              ? "bg-yellow-500"
-                              : "bg-red-500"
+                            ? "bg-yellow-500"
+                            : "bg-red-500"
                         }`}
                       />
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-900 text-sm">{submission.title}</h4>
+                        <h4 className="font-medium text-gray-900 text-sm">
+                          {submission.title}
+                        </h4>
                         <p className="text-xs text-gray-600">
                           {submission.grade} • Due {submission.dueDate}
                         </p>
@@ -295,8 +380,8 @@ export default function TeacherDashboard() {
                             submission.status === "submitted"
                               ? "default"
                               : submission.status === "pending"
-                                ? "secondary"
-                                : "destructive"
+                              ? "secondary"
+                              : "destructive"
                           }
                           className="text-xs"
                         >
@@ -311,7 +396,9 @@ export default function TeacherDashboard() {
               {/* Attendance Overview */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg font-semibold">Attendance Overview</CardTitle>
+                  <CardTitle className="text-lg font-semibold">
+                    Attendance Overview
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -326,13 +413,21 @@ export default function TeacherDashboard() {
                     {/* Grade 10A */}
                     <div>
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium text-gray-700">Grade 10A</span>
+                        <span className="text-sm font-medium text-gray-700">
+                          Grade 10A
+                        </span>
                         <span className="text-sm text-gray-500">Avg: 93%</span>
                       </div>
                       <div className="flex space-x-1">
                         {attendanceData.map((day, index) => (
-                          <div key={index} className="flex-1 h-2 bg-gray-200 rounded">
-                            <div className="h-full bg-blue-500 rounded" style={{ width: `${day.grade10A}%` }} />
+                          <div
+                            key={index}
+                            className="flex-1 h-2 bg-gray-200 rounded"
+                          >
+                            <div
+                              className="h-full bg-blue-500 rounded"
+                              style={{ width: `${day.grade10A}%` }}
+                            />
                           </div>
                         ))}
                       </div>
@@ -341,13 +436,21 @@ export default function TeacherDashboard() {
                     {/* Grade 11B */}
                     <div>
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium text-gray-700">Grade 11B</span>
+                        <span className="text-sm font-medium text-gray-700">
+                          Grade 11B
+                        </span>
                         <span className="text-sm text-gray-500">Avg: 88%</span>
                       </div>
                       <div className="flex space-x-1">
                         {attendanceData.map((day, index) => (
-                          <div key={index} className="flex-1 h-2 bg-gray-200 rounded">
-                            <div className="h-full bg-green-500 rounded" style={{ width: `${day.grade11B}%` }} />
+                          <div
+                            key={index}
+                            className="flex-1 h-2 bg-gray-200 rounded"
+                          >
+                            <div
+                              className="h-full bg-green-500 rounded"
+                              style={{ width: `${day.grade11B}%` }}
+                            />
                           </div>
                         ))}
                       </div>
@@ -356,13 +459,21 @@ export default function TeacherDashboard() {
                     {/* Grade 12A */}
                     <div>
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm font-medium text-gray-700">Grade 12A</span>
+                        <span className="text-sm font-medium text-gray-700">
+                          Grade 12A
+                        </span>
                         <span className="text-sm text-gray-500">Avg: 90%</span>
                       </div>
                       <div className="flex space-x-1">
                         {attendanceData.map((day, index) => (
-                          <div key={index} className="flex-1 h-2 bg-gray-200 rounded">
-                            <div className="h-full bg-purple-500 rounded" style={{ width: `${day.grade12A}%` }} />
+                          <div
+                            key={index}
+                            className="flex-1 h-2 bg-gray-200 rounded"
+                          >
+                            <div
+                              className="h-full bg-purple-500 rounded"
+                              style={{ width: `${day.grade12A}%` }}
+                            />
                           </div>
                         ))}
                       </div>
@@ -375,7 +486,9 @@ export default function TeacherDashboard() {
             {/* Quick Actions */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg font-semibold">Quick Actions</CardTitle>
+                <CardTitle className="text-lg font-semibold">
+                  Quick Actions
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -405,12 +518,8 @@ export default function TeacherDashboard() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-
-
-
-
 
 // "use client"
 

@@ -59,18 +59,19 @@ export default function Attendance() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-white">Attendance</h1>
+        <h1 className="text:xl lg:text-3xl font-bold text-white">Attendance</h1>
         <p className="text-slate-400 mt-1">Monitor your children's attendance records and patterns</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 ">
+
         {/* Main Content */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-3 space-y-6">
           {/* Attendance Overview */}
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle className="text-white">Attendance Overview</CardTitle>
-              <div className="flex gap-2">
+              <CardTitle className="text-white text-xl lg:text-3xl">Attendance Overview</CardTitle>
+              <div className="grid lg:flex gap-2">
                 <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                   Emma Johnson
                 </Button>
@@ -80,7 +81,7 @@ export default function Attendance() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-4 gap-4 mb-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 {attendanceStats.map((stat, index) => (
                   <div key={index} className="text-center p-4 bg-slate-700 rounded-lg">
                     <div
@@ -96,13 +97,13 @@ export default function Attendance() {
 
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <div className="flex justify-between items-center mb-2">
+                  <div className="grid lg:flex justify-between items-center mb-2">
                     <span className="text-slate-300">Current Attendance Rate</span>
                     <span className="text-white font-semibold">95.2%</span>
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between items-center mb-2">
+                  <div className="grid lg:flex justify-between items-center mb-2">
                     <span className="text-slate-300">This Month</span>
                     <span className="text-white font-semibold">98.5%</span>
                   </div>
@@ -114,8 +115,8 @@ export default function Attendance() {
           {/* Attendance Calendar */}
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle className="text-white">Attendance Calendar</CardTitle>
-              <div className="flex gap-2">
+              <CardTitle className="text-xl lg:text-3xl text-white">Attendance Calendar</CardTitle>
+              <div className="grid lg:flex gap-2">
                 <select className="bg-slate-700 border border-slate-600 rounded-md px-3 py-1 text-white text-sm">
                   <option>Emma Johnson</option>
                   <option>Sarah Johnson</option>
@@ -197,7 +198,7 @@ export default function Attendance() {
           {/* Monthly Trends */}
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle className="text-white">Monthly Trends</CardTitle>
+              <CardTitle className="text-white text-xl lg:text-3xl">Monthly Trends</CardTitle>
               <select className="bg-slate-700 border border-slate-600 rounded-md px-3 py-1 text-white text-sm">
                 <option>Emma Johnson</option>
                 <option>Sarah Johnson</option>
@@ -219,7 +220,7 @@ export default function Attendance() {
           {/* Statistics */}
           <Card className="bg-slate-800 border-slate-700">
             <CardHeader>
-              <CardTitle className="text-white">Statistics</CardTitle>
+              <CardTitle className="text-white text-xl lg:text-3xl">Statistics</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {statistics.map((stat, index) => (

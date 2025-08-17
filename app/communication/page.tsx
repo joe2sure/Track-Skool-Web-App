@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Header from '../../components/Header';
-import Card from '../../components/ui/card';
-import Button from '../../components/ui/button';
+import {Card} from '../../components/ui/card';
+import { Button } from '../../components/ui/button';
 import Input from '../../components/ui/Input';
 import { ThemeProvider } from '../../components/ThemeProvider';
 import Modal from '../../components/ui/Modal';
