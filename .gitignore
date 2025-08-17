@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# KEEP these in your repository
+!.next/cache
+!.next/build-manifest.json
+!.next/routes-manifest.json
+
 # Dependencies
 /node_modules
 /.pnp
