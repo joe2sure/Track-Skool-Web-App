@@ -7,11 +7,12 @@
     "prebuild": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }) } catch(e) {}\"",
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "build": "next build",
-    "render-build": "node scripts/render-build.js",
+    "render-build": "npm run debug-paths && node scripts/render-build.js",
     "start": "node scripts/start-server.js",
     "start-windows": "set NODE_ENV=production&& node .next/standalone/server.js",
     "start-linux": "NODE_ENV=production node .next/standalone/server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "debug-paths": "node scripts/path-debug.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -83,4 +84,4 @@
   "engines": {
     "node": ">=20.15.0"
   }
-}
+} 
