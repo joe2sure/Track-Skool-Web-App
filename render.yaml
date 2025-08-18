@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: trackskool-web
+    env: node
+    buildCommand: npm install --legacy-peer-deps && npm run render-build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.16.1
+    plan: free

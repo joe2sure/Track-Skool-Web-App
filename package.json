@@ -7,6 +7,7 @@
     "prebuild": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }) } catch(e) {}\"",
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "build": "next build",
+    "render-build": "./scripts/render-build.sh",
     "start": "next start",
     "lint": "next lint"
   },
