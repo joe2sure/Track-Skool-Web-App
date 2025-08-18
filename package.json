@@ -7,8 +7,10 @@
     "prebuild": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }) } catch(e) {}\"",
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "build": "next build",
-    "render-build": "./scripts/render-build.sh",
-    "start": "next start",
+    "render-build": "node scripts/render-build.js",
+    "start": "node scripts/start-server.js",
+    "start-windows": "set NODE_ENV=production&& node .next/standalone/server.js",
+    "start-linux": "NODE_ENV=production node .next/standalone/server.js",
     "lint": "next lint"
   },
   "dependencies": {
