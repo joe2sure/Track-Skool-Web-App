@@ -5,8 +5,8 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Input from "../../../components/ui/Input"
-import Button2 from "../../../components/ui/button2"
-import Card2 from "../../../components/ui/card2"
+import Button2 from "../../../components/ui/Button2"
+import Card2 from "../../../components/ui/Card2"
 
 export default function EnhancedDashboardLogin() {
   const [userType, setUserType] = useState("student")

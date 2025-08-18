@@ -5,8 +5,8 @@ import Header from '../../components/Header';
 // import Card from '../../components/ui/card';
 // import Button from '../../components/ui/button';
 import { ThemeProvider } from '../../components/ThemeProvider';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card } from '../../components/ui/Card';
+import { Button } from '../../components/ui/Button';
 
 export default function Attendance() {
   const [selectedClass, setSelectedClass] = useState('Mathematics');

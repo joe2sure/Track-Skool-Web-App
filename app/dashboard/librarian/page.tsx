@@ -7,7 +7,7 @@ import { StatCard } from "@/components/ui/librarian/stat-card"
 import { Input } from "@/components/ui/parent/input"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/Button"
 import { Progress } from "@/components/ui/progress"
 import {
   BookOpen,

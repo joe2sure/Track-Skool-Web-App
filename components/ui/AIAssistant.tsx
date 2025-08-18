@@ -6,8 +6,8 @@ import { useState } from "react"
 // import Card from "./card"
 // import Button from "./button"
 import Input from "./Input"
-import { Button } from "./button"
-import { Card } from "./card"
+import { Button } from "./Button"
+import { Card } from "./Card"
 
 interface Message {
   id: string

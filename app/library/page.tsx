@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Header from '../../components/Header';
-import Card from '../../components/ui/card';
-import Button from '../../components/ui/button';
+import {Card} from '../../components/ui/Card';
+import {Button} from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import { ThemeProvider } from '../../components/ThemeProvider';
 import Modal from '../../components/ui/Modal';
@@ -287,7 +287,8 @@ export default function Library() {
                         <div className="flex space-x-2">
                           <Button
                             size="sm"
-                            variant={book.available > 0 ? 'primary' : 'outline'}
+                            //variant={book.available > 0 ? 'primary' : 'outline'}
+                            variant="ghost"
                             disabled={book.available === 0}
                             className="flex-1"
                             onClick={() => {

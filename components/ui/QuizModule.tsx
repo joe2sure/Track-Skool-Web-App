@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import Card from "./card"
-import Button from "./button"
+import {Card} from "./Card"
+import {Button} from "./Button"
 
 interface QuizQuestion {
   id: string

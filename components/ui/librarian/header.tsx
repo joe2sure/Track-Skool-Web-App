@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Search, Bell, MessageSquare, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/Button"
 // import { Input } from "@/components/ui/input"
 import {
   DropdownMenu,

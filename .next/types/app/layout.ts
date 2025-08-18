@@ -1,4 +1,4 @@
-// File: D:\Coding\skool-bridge\app\layout.tsx
+// File: C:\Users\IFEANYI\React-projects\App2\Track-Skool-Web-App\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

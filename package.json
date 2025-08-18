@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p 3000",
+      "prebuild": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }) } catch(e) {}\"",
+    "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -53,6 +55,7 @@
     "react-day-picker": "9.8.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.60.0",
+    "react-is": "^19.1.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "^3.0.2",
     "sonner": "^1.7.4",
@@ -66,12 +69,14 @@
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "postcss": "^8.5",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
     "typescript": "^5"
   },
-"engines": {
-"node": ">=20.15.0" 
-}
+  "engines": {
+    "node": ">=20.15.0"
+  }
 }

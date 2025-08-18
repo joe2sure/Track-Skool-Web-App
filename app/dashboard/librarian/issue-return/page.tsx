@@ -6,7 +6,7 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/Button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BookCheck, BookOpen, Clock, AlertTriangle, Search, Calendar } from "lucide-react"
 import { Sidebar } from "@/components/ui/librarian/sidebar"
