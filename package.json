@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p 3000",
-      "prebuild": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }) } catch(e) {}\"",
+    "prebuild": "node -e \"try { require('fs').rmSync('.next', { recursive: true, force: true }) } catch(e) {}\"",
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "build": "next build",
     "start": "next start",
@@ -70,6 +70,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "eslint": "^9.33.0",
     "postcss": "^8.5",
     "rimraf": "^6.0.1",
     "tailwindcss": "^4.1.9",
