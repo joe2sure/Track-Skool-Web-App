@@ -1,0 +1,6 @@
+# Create .gitattributes to enforce case sensitivity
+echo "* text=auto" > .gitattributes
+echo "*.tsx text" >> .gitattributes
+echo "*.ts text" >> .gitattributes
+echo "*.js text" >> .gitattributes
+git add .gitattributes

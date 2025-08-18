@@ -526,8 +526,8 @@ export default function TeacherDashboard() {
 // import { useState, useEffect } from "react"
 // import { useRouter } from "next/navigation"
 // import Header from "../../../components/Header"
-// import Card2 from "../../../components/ui/card2"
-// import Button2 from "../../../components/ui/button2"
+// import Card2 from "../../../components/ui/Card2"
+// import Button2 from "../../../components/ui/Button2"
 // import { ThemeProvider } from "../../../components/ThemeProvider"
 
 // export default function TeacherDashboard() {
