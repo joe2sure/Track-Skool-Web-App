@@ -1,5 +1,5 @@
 // server.js
-const http = require('http');
+const { createServer } = require('http');
 const next = require('next');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -8,12 +8,10 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
-  const server = http.createServer((req, res) => {  
+  createServer((req, res) => {
     handle(req, res);
-  });
-
-  server.listen(port, (err) => {
+  }).listen(port, (err) => {
     if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
+    console.log(`> Ready on http://0.0.0.0:${port}`);
   });
 });

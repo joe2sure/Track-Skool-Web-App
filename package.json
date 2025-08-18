@@ -8,7 +8,7 @@
     "clean": "rm -rf .next && rm -rf node_modules/.cache",
     "build": "node scripts/verify-case.js && next build",
     "render-build": "npm run build",
-     "start": "PORT=10000 node .next/standalone/server.js",
+    "start": "node .next/standalone/server.js -p $PORT",
     "start-windows": "set NODE_ENV=production&& node .next/standalone/server.js",
     "start-linux": "NODE_ENV=production node .next/standalone/server.js",
     "lint": "next lint",
