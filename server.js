@@ -8,7 +8,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
-  const server = http.createServer((req, res) => {
+  const server = http.createServer((req, res) => {  
     handle(req, res);
   });
 
