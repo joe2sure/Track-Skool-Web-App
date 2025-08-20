@@ -21,7 +21,22 @@ const nextConfig: NextConfig = {
     };
 
     return config;
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'track-skool-web-app.onrender.com',
+          },
+        ],
+        destination: 'https://trackskool.co.uk',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
