@@ -1,11 +1,9 @@
 "use client"
 
 import Link from "next/link"
-// import Button from "../components/ui/button"
 import { ThemeProvider } from "../components/ThemeProvider"
 import Button2 from "../components/ui/Button2"
-// import Button2 from "../components/ui/Button2"
-// import  Button2  from "@/components/ui/Button2"
+
 
 export default function Home() {
   return (
