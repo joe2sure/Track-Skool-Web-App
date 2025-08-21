@@ -11,30 +11,41 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/page": [
+    "/dashboard/librarian/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/css/app/dashboard/librarian/layout.css",
+      "static/chunks/app/dashboard/librarian/layout.js"
+    ],
+    "/dashboard/librarian/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/loading.js"
+    ],
+    "/dashboard/librarian/overdue-list/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/overdue-list/loading.js"
+    ],
+    "/dashboard/librarian/overdue-list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/overdue-list/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
     ],
-    "/auth/dashboard-login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/auth/dashboard-login/page.js"
-    ],
     "/manifest.webmanifest/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/manifest.webmanifest/route.js"
     ],
-    "/dashboard/student/page": [
+    "/auth/dashboard-login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/student/page.js"
+      "static/chunks/app/auth/dashboard-login/page.js"
     ],
     "/dashboard/parent/layout": [
       "static/chunks/webpack.js",
@@ -71,55 +82,30 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/parent/settings/page.js"
     ],
-    "/dashboard/teacher/page": [
+    "/dashboard/school-admin/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/page.js"
+      "static/chunks/app/dashboard/school-admin/layout.js"
     ],
-    "/dashboard/teacher/class-schedule/page": [
+    "/dashboard/school-admin/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/class-schedule/page.js"
+      "static/chunks/app/dashboard/school-admin/page.js"
     ],
-    "/dashboard/teacher/assignments/loading": [
+    "/dashboard/school-admin/settings/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/assignments/loading.js"
+      "static/chunks/app/dashboard/school-admin/settings/page.js"
     ],
-    "/dashboard/teacher/assignments/page": [
+    "/dashboard/student/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/assignments/page.js"
+      "static/chunks/app/dashboard/student/page.js"
     ],
-    "/dashboard/teacher/attendance/loading": [
+    "/dashboard/student/assignments/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/attendance/loading.js"
-    ],
-    "/dashboard/teacher/attendance/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/attendance/page.js"
-    ],
-    "/dashboard/teacher/results/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/results/loading.js"
-    ],
-    "/dashboard/teacher/results/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/results/page.js"
-    ],
-    "/auth/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/auth/login/page.js"
-    ],
-    "/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/page.js"
+      "static/chunks/app/dashboard/student/assignments/page.js"
     ]
   }
 }
