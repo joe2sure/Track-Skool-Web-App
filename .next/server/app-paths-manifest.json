@@ -1,8 +1,9 @@
 {
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/auth/dashboard-login/page": "app/auth/dashboard-login/page.js",
   "/dashboard/student/page": "app/dashboard/student/page.js",
   "/dashboard/student/assignments/page": "app/dashboard/student/assignments/page.js",
-  "/dashboard/parent/page": "app/dashboard/parent/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/dashboard/parent/page": "app/dashboard/parent/page.js",
+  "/dashboard/parent/child-progress/page": "app/dashboard/parent/child-progress/page.js"
 }
