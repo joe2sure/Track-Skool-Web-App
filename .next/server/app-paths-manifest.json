@@ -1,9 +1,7 @@
 {
-  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
   "/auth/dashboard-login/page": "app/auth/dashboard-login/page.js",
-  "/dashboard/student/page": "app/dashboard/student/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/dashboard/student/assignments/page": "app/dashboard/student/assignments/page.js",
-  "/dashboard/school-admin/page": "app/dashboard/school-admin/page.js",
-  "/dashboard/school-admin/settings/page": "app/dashboard/school-admin/settings/page.js"
+  "/dashboard/student/page": "app/dashboard/student/page.js",
+  "/dashboard/school-admin/settings/page": "app/dashboard/school-admin/settings/page.js",
+  "/dashboard/school-admin/page": "app/dashboard/school-admin/page.js"
 }
