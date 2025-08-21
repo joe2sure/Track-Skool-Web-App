@@ -1,10 +1,11 @@
 "use client"
 
 import { Bell, Moon, Sun, User, Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Badge } from "@/components/ui/badge"
 import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/Button"
 
 interface StudentHeaderProps {
   onMenuToggle?: () => void
