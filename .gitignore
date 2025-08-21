@@ -190,4 +190,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 # TailwindCSS
-/styles/globals.css.map
+/styles/globals.css.map.next/
