@@ -1,7 +1,7 @@
 {
   "/auth/dashboard-login/page": "app/auth/dashboard-login/page.js",
-  "/dashboard/student/assignments/page": "app/dashboard/student/assignments/page.js",
   "/dashboard/student/page": "app/dashboard/student/page.js",
-  "/dashboard/school-admin/settings/page": "app/dashboard/school-admin/settings/page.js",
-  "/dashboard/school-admin/page": "app/dashboard/school-admin/page.js"
+  "/dashboard/student/assignments/page": "app/dashboard/student/assignments/page.js",
+  "/dashboard/school-admin/page": "app/dashboard/school-admin/page.js",
+  "/dashboard/school-admin/settings/page": "app/dashboard/school-admin/settings/page.js"
 }
