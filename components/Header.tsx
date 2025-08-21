@@ -23,7 +23,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <i className="ri-graduation-cap-line text-white text-lg w-5 h-5 flex items-center justify-center"></i>
             </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">EduHub</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">Track School</span>
           </Link>
 
           {/* Search Bar */}
