@@ -9,7 +9,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import {
   LayoutDashboard,
   FileText,
@@ -25,6 +25,7 @@ import {
   X,
 } from "lucide-react"
 import Link from "next/link"
+import { Button } from "@/components/ui/Button"
 
 const menuItems = [
   {
