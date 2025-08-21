@@ -1,9 +1,12 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+// import { Button } from "@/components/ui/button"
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/Button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import {
   Trophy,
   TrendingUp,
