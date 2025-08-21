@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+// import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Progress } from "@/components/ui/progress"
@@ -18,6 +18,8 @@ import {
   Cell,
 } from "recharts"
 import { Download, FileText, TrendingUp, Eye } from "lucide-react"
+import { Button } from "@/components/ui/Button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 
 const gradeData = [
   { week: "Week 1", Mathematics: 85, Physics: 78, Chemistry: 92, English: 88, History: 75, Biology: 90 },
