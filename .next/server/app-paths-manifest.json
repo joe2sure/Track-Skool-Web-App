@@ -4,8 +4,6 @@
   "/dashboard/student/page": "app/dashboard/student/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/dashboard/student/assignments/page": "app/dashboard/student/assignments/page.js",
-  "/dashboard/parent/communication/page": "app/dashboard/parent/communication/page.js",
-  "/dashboard/parent/settings/page": "app/dashboard/parent/settings/page.js",
-  "/dashboard/school-admin/page": "app/dashboard/school-admin/page.js",
-  "/dashboard/school-admin/settings/page": "app/dashboard/school-admin/settings/page.js"
+  "/dashboard/school-admin/settings/page": "app/dashboard/school-admin/settings/page.js",
+  "/dashboard/school-admin/page": "app/dashboard/school-admin/page.js"
 }

@@ -1,7 +1,3 @@
-// import { Sidebar } from "@/components/sidebar"
-// import { Header } from "@/components/header"
-// import { StatCard } from "@/components/stat-card"
-// import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/Button"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"

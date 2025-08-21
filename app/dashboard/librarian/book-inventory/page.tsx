@@ -1,10 +1,12 @@
-// import { Sidebar } from "@/components/sidebar"
-// import { Header } from "@/components/header"
-// import { StatCard } from "@/components/stat-card"
-// import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/Button"
-import { Badge } from "@/components/ui/badge"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   BookOpen,
   BookCheck,
@@ -18,11 +20,11 @@ import {
   TrendingUp,
   Users,
   ArrowUpDown,
-} from "lucide-react"
-import { Sidebar } from "@/components/ui/librarian/sidebar"
-import { Header } from "@/components/ui/librarian/header"
-import { StatCard } from "@/components/ui/librarian/stat-card"
-import { Input } from "@/components/ui/parent/input"
+} from "lucide-react";
+import { Sidebar } from "@/components/ui/librarian/sidebar";
+import { Header } from "@/components/ui/librarian/header";
+import { StatCard } from "@/components/ui/librarian/stat-card";
+import { Input } from "@/components/ui/parent/input";
 
 export default function BookInventoryPage() {
   const books = [
@@ -81,7 +83,7 @@ export default function BookInventoryPage() {
       location: "E-203",
       status: "Out of Stock",
     },
-  ]
+  ];
 
   const recentActivities = [
     {
@@ -112,14 +114,22 @@ export default function BookInventoryPage() {
       icon: TrendingUp,
       color: "text-purple-400",
     },
-  ]
+  ];
 
   const lowStockItems = [
     { title: "Organic Chemistry Basics", stock: "1/8", status: "Only 1 left" },
-    { title: "Data Structures & Algorithms", stock: "2/12", status: "Only 2 left" },
+    {
+      title: "Data Structures & Algorithms",
+      stock: "2/12",
+      status: "Only 2 left",
+    },
     { title: "World War II History", stock: "1/6", status: "Only 1 left" },
-    { title: "Shakespeare Complete Works", stock: "2/10", status: "Only 2 left" },
-  ]
+    {
+      title: "Shakespeare Complete Works",
+      stock: "2/10",
+      status: "Only 2 left",
+    },
+  ];
 
   const categories = [
     { name: "Science & Technology", count: 2847, color: "bg-blue-500" },
@@ -127,7 +137,7 @@ export default function BookInventoryPage() {
     { name: "History & Social Studies", count: 1789, color: "bg-yellow-500" },
     { name: "Mathematics", count: 1634, color: "bg-purple-500" },
     { name: "Reference Books", count: 1205, color: "bg-pink-500" },
-  ]
+  ];
 
   return (
     <div className="flex h-screen bg-slate-900">
@@ -183,7 +193,9 @@ export default function BookInventoryPage() {
               {/* Book Catalog */}
               <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-xl font-semibold text-white">Book Catalog</h2>
+                  <h2 className="text-xl font-semibold text-white">
+                    Book Catalog
+                  </h2>
                   <Button className="bg-blue-600 hover:bg-blue-700">
                     <Plus className="h-4 w-4 mr-2" />
                     Add New Book
@@ -229,26 +241,50 @@ export default function BookInventoryPage() {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-slate-700">
-                        <th className="text-left py-3 px-4 text-slate-400 font-medium">Book Details</th>
-                        <th className="text-left py-3 px-4 text-slate-400 font-medium">Category</th>
-                        <th className="text-left py-3 px-4 text-slate-400 font-medium">Availability</th>
-                        <th className="text-left py-3 px-4 text-slate-400 font-medium">Location</th>
-                        <th className="text-left py-3 px-4 text-slate-400 font-medium">Actions</th>
+                        <th className="text-left py-3 px-4 text-slate-400 font-medium">
+                          Book Details
+                        </th>
+                        <th className="text-left py-3 px-4 text-slate-400 font-medium">
+                          Category
+                        </th>
+                        <th className="text-left py-3 px-4 text-slate-400 font-medium">
+                          Availability
+                        </th>
+                        <th className="text-left py-3 px-4 text-slate-400 font-medium">
+                          Location
+                        </th>
+                        <th className="text-left py-3 px-4 text-slate-400 font-medium">
+                          Actions
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {books.map((book, index) => (
-                        <tr key={index} className="border-b border-slate-700/50 hover:bg-slate-700/30">
+                        <tr
+                          key={index}
+                          className="border-b border-slate-700/50 hover:bg-slate-700/30"
+                        >
                           <td className="py-4 px-4">
                             <div>
-                              <h3 className="text-white font-medium">{book.title}</h3>
-                              <p className="text-slate-400 text-sm">by {book.author}</p>
-                              <p className="text-slate-500 text-xs">ISBN: {book.isbn}</p>
-                              <p className="text-slate-500 text-xs">{book.publisher}</p>
+                              <h3 className="text-white font-medium">
+                                {book.title}
+                              </h3>
+                              <p className="text-slate-400 text-sm">
+                                by {book.author}
+                              </p>
+                              <p className="text-slate-500 text-xs">
+                                ISBN: {book.isbn}
+                              </p>
+                              <p className="text-slate-500 text-xs">
+                                {book.publisher}
+                              </p>
                             </div>
                           </td>
                           <td className="py-4 px-4">
-                            <Badge variant="secondary" className="bg-slate-700 text-slate-300">
+                            <Badge
+                              variant="secondary"
+                              className="bg-slate-700 text-slate-300"
+                            >
                               {book.category}
                             </Badge>
                           </td>
@@ -259,24 +295,28 @@ export default function BookInventoryPage() {
                                   book.availability === "Available"
                                     ? "default"
                                     : book.availability === "Low Stock"
-                                      ? "destructive"
-                                      : "secondary"
+                                    ? "destructive"
+                                    : "secondary"
                                 }
                                 className={
                                   book.availability === "Available"
                                     ? "bg-green-600"
                                     : book.availability === "Low Stock"
-                                      ? "bg-yellow-600"
-                                      : "bg-red-600"
+                                    ? "bg-yellow-600"
+                                    : "bg-red-600"
                                 }
                               >
                                 {book.availability}
                               </Badge>
-                              <p className="text-slate-400 text-sm mt-1">{book.availableCount}</p>
+                              <p className="text-slate-400 text-sm mt-1">
+                                {book.availableCount}
+                              </p>
                             </div>
                           </td>
                           <td className="py-4 px-4">
-                            <span className="text-slate-300">{book.location}</span>
+                            <span className="text-slate-300">
+                              {book.location}
+                            </span>
                           </td>
                           <td className="py-4 px-4">
                             <div className="flex items-center space-x-2">
@@ -300,17 +340,25 @@ export default function BookInventoryPage() {
             <div className="space-y-6">
               {/* Recent Activities */}
               <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
-                <h2 className="text-xl font-semibold text-white mb-6">Recent Activities</h2>
+                <h2 className="text-xl font-semibold text-white mb-6">
+                  Recent Activities
+                </h2>
                 <div className="space-y-4">
                   {recentActivities.map((activity, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <div className={`p-2 rounded-lg bg-slate-700 ${activity.color}`}>
+                      <div
+                        className={`p-2 rounded-lg bg-slate-700 ${activity.color}`}
+                      >
                         <activity.icon className="h-4 w-4" />
                       </div>
                       <div className="flex-1">
                         <p className="text-white text-sm">{activity.type}</p>
-                        <p className="text-slate-400 text-sm">{activity.count}</p>
-                        <p className="text-slate-500 text-xs mt-1">{activity.time}</p>
+                        <p className="text-slate-400 text-sm">
+                          {activity.count}
+                        </p>
+                        <p className="text-slate-500 text-xs mt-1">
+                          {activity.time}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -320,18 +368,29 @@ export default function BookInventoryPage() {
               {/* Low Stock Alert */}
               <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xl font-semibold text-white">Low Stock Alert</h2>
+                  <h2 className="text-xl font-semibold text-white">
+                    Low Stock Alert
+                  </h2>
                   <Badge variant="destructive" className="bg-red-600">
                     4 Items
                   </Badge>
                 </div>
                 <div className="space-y-3">
                   {lowStockItems.map((item, index) => (
-                    <div key={index} className="p-3 bg-red-500/10 rounded-lg border border-red-500/20">
-                      <h3 className="text-white font-medium text-sm">{item.title}</h3>
+                    <div
+                      key={index}
+                      className="p-3 bg-red-500/10 rounded-lg border border-red-500/20"
+                    >
+                      <h3 className="text-white font-medium text-sm">
+                        {item.title}
+                      </h3>
                       <div className="flex items-center justify-between mt-1">
-                        <span className="text-red-400 text-sm">{item.stock}</span>
-                        <span className="text-red-400 text-xs">{item.status}</span>
+                        <span className="text-red-400 text-sm">
+                          {item.stock}
+                        </span>
+                        <span className="text-red-400 text-xs">
+                          {item.status}
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -341,7 +400,9 @@ export default function BookInventoryPage() {
               {/* Categories */}
               <div className="bg-slate-800 rounded-lg p-6 border border-slate-700">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-xl font-semibold text-white">Categories</h2>
+                  <h2 className="text-xl font-semibold text-white">
+                    Categories
+                  </h2>
                   <Button
                     variant="outline"
                     size="sm"
@@ -357,16 +418,20 @@ export default function BookInventoryPage() {
                       className="flex items-center justify-between p-3 rounded-lg hover:bg-slate-700/50 transition-colors"
                     >
                       <div className="flex items-center space-x-3">
-                        <div className={`w-3 h-3 rounded-full ${category.color}`} />
+                        <div
+                          className={`w-3 h-3 rounded-full ${category.color}`}
+                        />
                         <span className="text-slate-300">{category.name}</span>
                       </div>
-                      <span className="text-white font-medium">{category.count.toLocaleString()}</span>
+                      <span className="text-white font-medium">
+                        {category.count.toLocaleString()}
+                      </span>
                     </div>
                   ))}
                 </div>
                 <div className="mt-4 pt-4 border-t border-slate-700 text-right">
                   <span className="text-xs text-slate-400">Designed by</span>
-                  <span className="text-xs text-blue-400 ml-1">Roaddy</span>
+                  <span className="text-xs text-blue-400 ml-1">Klontek</span>
                 </div>
               </div>
             </div>
@@ -374,5 +439,5 @@ export default function BookInventoryPage() {
         </main>
       </div>
     </div>
-  )
+  );
 }
