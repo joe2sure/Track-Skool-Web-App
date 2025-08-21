@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Button2 from '@/components/ui/Button2';
+import Button2 from '@/components/ui/button2';
 import Input from '../../../components/ui/Input';
 
 export default function ForgotPassword() {

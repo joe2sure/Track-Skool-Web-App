@@ -5,8 +5,8 @@ import Header from '../../components/Header';
 import Input from '../../components/ui/Input';
 import { ThemeProvider } from '../../components/ThemeProvider';
 import Modal from '../../components/ui/Modal';
-import  Button2  from '@/components/ui/Button2';
-import  Card2  from '@/components/ui/Card2';
+import  Button2  from '@/components/ui/button2';
+import  Card2  from '@/components/ui/card2';
 
 export default function Assignments() {
   const [view, setView] = useState('list');
