@@ -201,6 +201,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/librarian/book-inventory/page.js"
+    ],
+    "/dashboard/librarian/issue-return/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/issue-return/loading.js"
+    ],
+    "/dashboard/librarian/issue-return/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/issue-return/page.js"
     ]
   }
 }
