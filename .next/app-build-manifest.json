@@ -216,6 +216,71 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/teacher/page.js"
+    ],
+    "/dashboard/teacher/events/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/events/loading.js"
+    ],
+    "/dashboard/teacher/events/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/events/page.js"
+    ],
+    "/dashboard/teacher/resources/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/resources/loading.js"
+    ],
+    "/dashboard/teacher/resources/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/resources/page.js"
+    ],
+    "/dashboard/teacher/communication/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/communication/loading.js"
+    ],
+    "/dashboard/teacher/communication/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/communication/page.js"
+    ],
+    "/dashboard/teacher/results/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/results/loading.js"
+    ],
+    "/dashboard/teacher/results/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/results/page.js"
+    ],
+    "/dashboard/teacher/attendance/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/attendance/loading.js"
+    ],
+    "/dashboard/teacher/attendance/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/attendance/page.js"
+    ],
+    "/dashboard/teacher/assignments/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/assignments/loading.js"
+    ],
+    "/dashboard/teacher/assignments/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/assignments/page.js"
+    ],
+    "/dashboard/teacher/class-schedule/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/class-schedule/page.js"
     ]
   }
 }
