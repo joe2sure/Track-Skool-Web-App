@@ -281,6 +281,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/teacher/class-schedule/page.js"
+    ],
+    "/dashboard/teacher/settings/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/settings/loading.js"
+    ],
+    "/dashboard/teacher/settings/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/teacher/settings/page.js"
     ]
   }
 }
