@@ -1,8 +1,6 @@
 {
-  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
   "/dashboard/student/communication/page": "app/dashboard/student/communication/page.js",
   "/dashboard/student/payments/page": "app/dashboard/student/payments/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/dashboard/student/rankings/page": "app/dashboard/student/rankings/page.js",
   "/dashboard/student/quizzes/page": "app/dashboard/student/quizzes/page.js",
   "/dashboard/student/settings/page": "app/dashboard/student/settings/page.js"
