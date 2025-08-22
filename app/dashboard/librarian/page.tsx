@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Header } from "@/components/ui/librarian/header"
@@ -241,14 +240,14 @@ export default function Dashboard() {
     <div className="flex h-screen bg-slate-900">
       <Sidebar />
 
-      <div className="flex-1 flex flex-col overflow-hidden ml-64">
+      <div className="flex-1 flex flex-col overflow-hidden lg:ml-64">
         <Header
           title="Welcome back, Maria Smith"
           subtitle="Head Librarian • Central Campus Library"
           backgroundImage="/placeholder.svg?height=200&width=1200"
         />
 
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto p-4 lg:p-6">
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <StatCard
@@ -552,11 +551,17 @@ export default function Dashboard() {
 
 
 
-// import { Button } from "@/components/ui/button"
+
+
+// "use client"
+
 // import { Header } from "@/components/ui/librarian/header"
 // import { Sidebar } from "@/components/ui/librarian/sidebar"
 // import { StatCard } from "@/components/ui/librarian/stat-card"
 // import { Input } from "@/components/ui/parent/input"
+// import { useEffect, useState } from "react"
+// import { useRouter } from "next/navigation"
+// import { Button } from "@/components/ui/Button"
 // import { Progress } from "@/components/ui/progress"
 // import {
 //   BookOpen,
@@ -573,6 +578,36 @@ export default function Dashboard() {
 // } from "lucide-react"
 
 // export default function Dashboard() {
+//   const [isAuthenticated, setIsAuthenticated] = useState(false)
+//   const [isLoading, setIsLoading] = useState(true)
+//   const router = useRouter()
+
+//   useEffect(() => {
+//     const userType = localStorage.getItem("userType")
+//     const userData = localStorage.getItem("userData")
+
+//     if (userType === "librarian" && userData) {
+//       setIsAuthenticated(true)
+//     } else {
+//       router.push("/auth/dashboard-login")
+//       return
+//     }
+
+//     setIsLoading(false)
+//   }, [router])
+
+//   if (isLoading) {
+//     return (
+//       <div className="flex h-screen bg-slate-900 items-center justify-center">
+//         <div className="text-white">Loading...</div>
+//       </div>
+//     )
+//   }
+
+//   if (!isAuthenticated) {
+//     return null
+//   }
+
 //   const inventoryData = [
 //     { category: "Science & Technology", count: 2847, percentage: 22.2, color: "bg-blue-500" },
 //     { category: "Literature & Arts", count: 2156, percentage: 16.8, color: "bg-green-500" },
@@ -632,7 +667,7 @@ export default function Dashboard() {
 //       author: "Dr. Mary Anderson",
 //       dueDate: "2/12/2024",
 //       daysLeft: "1 day left",
-//       status: "Due Soon",
+//       status: "DueSoon",
 //       statusColor: "bg-yellow-500",
 //     },
 //   ]

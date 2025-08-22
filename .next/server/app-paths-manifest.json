@@ -1,10 +1,7 @@
 {
-  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/dashboard/librarian/library-events/page": "app/dashboard/librarian/library-events/page.js",
+  "/dashboard/librarian/page": "app/dashboard/librarian/page.js",
   "/dashboard/librarian/communication/page": "app/dashboard/librarian/communication/page.js",
-  "/dashboard/librarian/reports/page": "app/dashboard/librarian/reports/page.js",
   "/dashboard/librarian/settings/page": "app/dashboard/librarian/settings/page.js",
   "/dashboard/librarian/overdue-list/page": "app/dashboard/librarian/overdue-list/page.js",
-  "/dashboard/librarian/page": "app/dashboard/librarian/page.js"
+  "/dashboard/librarian/reports/page": "app/dashboard/librarian/reports/page.js"
 }
