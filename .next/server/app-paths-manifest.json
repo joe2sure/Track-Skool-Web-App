@@ -1,7 +1,8 @@
 {
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/dashboard/librarian/library-events/page": "app/dashboard/librarian/library-events/page.js",
+  "/auth/dashboard-login/page": "app/auth/dashboard-login/page.js",
+  "/dashboard/teacher/page": "app/dashboard/teacher/page.js",
   "/dashboard/librarian/communication/page": "app/dashboard/librarian/communication/page.js",
   "/dashboard/librarian/reports/page": "app/dashboard/librarian/reports/page.js",
   "/dashboard/librarian/settings/page": "app/dashboard/librarian/settings/page.js",
