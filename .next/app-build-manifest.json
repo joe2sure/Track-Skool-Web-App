@@ -156,6 +156,51 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/student/settings/page.js"
+    ],
+    "/dashboard/librarian/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/page.js"
+    ],
+    "/dashboard/librarian/library-events/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/library-events/loading.js"
+    ],
+    "/dashboard/librarian/library-events/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/library-events/page.js"
+    ],
+    "/dashboard/librarian/communication/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/communication/loading.js"
+    ],
+    "/dashboard/librarian/communication/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/communication/page.js"
+    ],
+    "/dashboard/librarian/reports/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/reports/page.js"
+    ],
+    "/dashboard/librarian/settings/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/settings/page.js"
+    ],
+    "/dashboard/librarian/book-inventory/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/book-inventory/loading.js"
+    ],
+    "/dashboard/librarian/book-inventory/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/librarian/book-inventory/page.js"
     ]
   }
 }
