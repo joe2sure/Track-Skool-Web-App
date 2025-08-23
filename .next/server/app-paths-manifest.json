@@ -1,10 +1,10 @@
 {
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
-  "/dashboard/teacher/page": "app/dashboard/teacher/page.js",
-  "/dashboard/teacher/class-schedule/page": "app/dashboard/teacher/class-schedule/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/dashboard/teacher/resources/page": "app/dashboard/teacher/resources/page.js",
-  "/dashboard/teacher/settings/page": "app/dashboard/teacher/settings/page.js",
-  "/page": "app/page.js",
-  "/auth/dashboard-login/page": "app/auth/dashboard-login/page.js"
+  "/dashboard/student/attendance/page": "app/dashboard/student/attendance/page.js",
+  "/dashboard/student/library/page": "app/dashboard/student/library/page.js",
+  "/dashboard/student/results/page": "app/dashboard/student/results/page.js",
+  "/dashboard/student/communication/page": "app/dashboard/student/communication/page.js",
+  "/dashboard/student/payments/page": "app/dashboard/student/payments/page.js",
+  "/dashboard/student/rankings/page": "app/dashboard/student/rankings/page.js"
 }

@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Button2 from '../../../components/ui/button2';
+import Button2 from '../../../components/ui/Button2';
 import Input from '../../../components/ui/Input';
-import Card2 from '../../../components/ui/card2';
+import Card2 from '../../../components/ui/Card2';
 
 export default function Login() {
   const [email, setEmail] = useState('');

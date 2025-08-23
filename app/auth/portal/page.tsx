@@ -5,9 +5,9 @@ import type React from "react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import Button2 from "../../../components/ui/button2"
+import Button2 from "../../../components/ui/Button2"
 import Input from "../../../components/ui/Input"
-import Card2 from "../../../components/ui/card2"
+import Card2 from "../../../components/ui/Card2"
 
 // Define specific types for each credential type
 type StudentCredentials = { schoolId: string; studentId: string; password: string }

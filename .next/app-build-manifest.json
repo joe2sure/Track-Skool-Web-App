@@ -11,26 +11,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/dashboard/librarian/layout": [
+    "/dashboard/teacher/resources/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/dashboard/librarian/layout.css",
-      "static/chunks/app/dashboard/librarian/layout.js"
+      "static/chunks/app/dashboard/teacher/resources/loading.js"
     ],
-    "/dashboard/librarian/loading": [
+    "/dashboard/teacher/resources/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/loading.js"
+      "static/chunks/app/dashboard/teacher/resources/page.js"
     ],
-    "/dashboard/librarian/overdue-list/loading": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/overdue-list/loading.js"
-    ],
-    "/dashboard/librarian/overdue-list/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/overdue-list/page.js"
+      "static/chunks/app/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
@@ -47,56 +41,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/auth/dashboard-login/page.js"
     ],
-    "/dashboard/parent/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/parent/layout.js"
-    ],
-    "/dashboard/parent/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/parent/page.js"
-    ],
-    "/dashboard/parent/child-progress/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/parent/child-progress/page.js"
-    ],
-    "/dashboard/parent/attendance/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/parent/attendance/page.js"
-    ],
-    "/dashboard/parent/assignments/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/parent/assignments/page.js"
-    ],
-    "/dashboard/parent/communication/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/parent/communication/page.js"
-    ],
-    "/dashboard/parent/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/parent/settings/page.js"
-    ],
-    "/dashboard/school-admin/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/school-admin/layout.js"
-    ],
-    "/dashboard/school-admin/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/school-admin/page.js"
-    ],
-    "/dashboard/school-admin/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/school-admin/settings/page.js"
-    ],
     "/dashboard/student/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -111,11 +55,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/student/results/page.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
     ],
     "/dashboard/student/attendance/page": [
       "static/chunks/webpack.js",
@@ -146,151 +85,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/student/rankings/page.js"
-    ],
-    "/dashboard/student/quizzes/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/student/quizzes/page.js"
-    ],
-    "/dashboard/student/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/student/settings/page.js"
-    ],
-    "/dashboard/librarian/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/page.js"
-    ],
-    "/dashboard/librarian/library-events/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/library-events/loading.js"
-    ],
-    "/dashboard/librarian/library-events/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/library-events/page.js"
-    ],
-    "/dashboard/librarian/communication/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/communication/loading.js"
-    ],
-    "/dashboard/librarian/communication/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/communication/page.js"
-    ],
-    "/dashboard/librarian/reports/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/reports/page.js"
-    ],
-    "/dashboard/librarian/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/settings/page.js"
-    ],
-    "/dashboard/librarian/book-inventory/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/book-inventory/loading.js"
-    ],
-    "/dashboard/librarian/book-inventory/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/book-inventory/page.js"
-    ],
-    "/dashboard/librarian/issue-return/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/issue-return/loading.js"
-    ],
-    "/dashboard/librarian/issue-return/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/librarian/issue-return/page.js"
-    ],
-    "/dashboard/teacher/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/page.js"
-    ],
-    "/dashboard/teacher/events/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/events/loading.js"
-    ],
-    "/dashboard/teacher/events/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/events/page.js"
-    ],
-    "/dashboard/teacher/resources/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/resources/loading.js"
-    ],
-    "/dashboard/teacher/resources/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/resources/page.js"
-    ],
-    "/dashboard/teacher/communication/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/communication/loading.js"
-    ],
-    "/dashboard/teacher/communication/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/communication/page.js"
-    ],
-    "/dashboard/teacher/results/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/results/loading.js"
-    ],
-    "/dashboard/teacher/results/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/results/page.js"
-    ],
-    "/dashboard/teacher/attendance/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/attendance/loading.js"
-    ],
-    "/dashboard/teacher/attendance/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/attendance/page.js"
-    ],
-    "/dashboard/teacher/assignments/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/assignments/loading.js"
-    ],
-    "/dashboard/teacher/assignments/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/assignments/page.js"
-    ],
-    "/dashboard/teacher/class-schedule/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/class-schedule/page.js"
-    ],
-    "/dashboard/teacher/settings/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/settings/loading.js"
-    ],
-    "/dashboard/teacher/settings/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/teacher/settings/page.js"
     ]
   }
 }

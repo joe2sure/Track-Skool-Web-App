@@ -2,7 +2,8 @@
 
 import Link from "next/link"
 import { ThemeProvider } from "../components/ThemeProvider"
-import Button2 from "../components/ui/button2"
+import Button2 from "@/components/ui/Button2"
+// import Button2 from "../components/ui/Button2"
 
 export default function Home() {
   return (
