@@ -45,7 +45,7 @@ export default function Home() {
               <Link href="/auth/dashboard-login">
                 <Button2 size="lg" className="w-48">
                   <i className="ri-dashboard-line mr-2 w-5 h-5 flex items-center justify-center"></i>
-                  Access Dashboard
+                  Premium Portal
                 </Button2>
               </Link>
               <Link href="/auth/register">
@@ -54,8 +54,8 @@ export default function Home() {
                   variant="outline"
                   className="w-48 bg-white/10 border-white text-white hover:bg-white/20"
                 >
-                  <i className="ri-user-add-line mr-2 w-5 h-5 flex items-center justify-center"></i>
-                  Get Started Free
+                  <i className="ri-user-add-line mr-2 w-5 h-5 flex items-center justify-center"></i>                  
+                  Access Dashboard
                 </Button2>
               </Link>
             </div>
