@@ -42,13 +42,13 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
-              <Link href="/auth/dashboard-login">
+              <Link href="/auth/register">
                 <Button2 size="lg" className="w-48">
                   <i className="ri-dashboard-line mr-2 w-5 h-5 flex items-center justify-center"></i>
                   Premium Portal
                 </Button2>
               </Link>
-              <Link href="/auth/register">
+              <Link href="/auth/dashboard-login">
                 <Button2
                   size="lg"
                   variant="outline"
