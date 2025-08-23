@@ -17,7 +17,7 @@ export default function EnhancedDashboardLogin() {
     teacherId: "",
     adminId: "",
     superAdminId: "",
-    librarianId: "", 
+    librarianId: "",
     hostelId: "",
     password: "",
     confirmPassword: "",
@@ -43,7 +43,6 @@ export default function EnhancedDashboardLogin() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Simple authentication logic with dummy credentials
     const credentials = dummyCredentials[userType as keyof typeof dummyCredentials]
     let isValid = false
 
@@ -102,11 +101,8 @@ export default function EnhancedDashboardLogin() {
     }
 
     if (isValid) {
-      // Store user info in localStorage for demo purposes
       localStorage.setItem("userType", userType)
       localStorage.setItem("userData", JSON.stringify(formData))
-
-      // Navigate to appropriate dashboard
       router.push(`/dashboard/${userType}`)
     } else {
       alert("Invalid credentials. Please check the dummy credentials in the code.")
@@ -119,7 +115,6 @@ export default function EnhancedDashboardLogin() {
       alert("Passwords do not match")
       return
     }
-    // After registration, redirect to login
     setIsRegistering(false)
     alert("Registration successful! Please login with your credentials.")
   }
@@ -278,9 +273,26 @@ export default function EnhancedDashboardLogin() {
       case "hostel":
         return (
           <>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Hostel ID</label>
-            <Input  name="schoolId" value={formData.schoolId} onChange={handleChange} placeholder="SCH001" />
-            <Input  name="hostelId" value={formData.hostelId} onChange={handleChange} placeholder="HOS001" />
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">School ID</label>
+              <Input
+                name="schoolId"
+                value={formData.schoolId}
+                onChange={handleChange}
+                placeholder="Enter school ID (SCH001)"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Hostel ID</label>
+              <Input
+                name="hostelId"
+                value={formData.hostelId}
+                onChange={handleChange}
+                placeholder="Enter hostel ID (HOS001)"
+                required
+              />
+            </div>
           </>
         )
       default:
@@ -315,7 +327,8 @@ export default function EnhancedDashboardLogin() {
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">I am a</label>
           <div className="grid grid-cols-3 gap-2 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
-            {["student", "parent", "teacher", "school-admin", "super-admin", "librarian"].map((type) => (
+            {/* <-- added "hostel" here */}
+            {["student", "parent", "teacher", "school-admin", "super-admin", "librarian", "hostel"].map((type) => (
               <button
                 key={type}
                 type="button"
