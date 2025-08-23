@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import HostelSidebar from "@/components/dashboard/hostel/hostel-sidebar";
-import HostelTopbar from "@/components/dashboard/hostel/hostel-topbar";
+// import HostelSidebar from "@/components/dashboard/hostel/hostel-sidebar";
+// import HostelTopbar from "@/components/dashboard/hostel/hostel-topbar";
 import {
   Bell,
   CheckCircle2,
@@ -21,6 +21,8 @@ import {
   Users,
   Wrench
 } from "lucide-react";
+import HostelSidebar from "@/components/dashboard/hostel/hostel-sidebar";
+import HostelTopbar from "@/components/dashboard/hostel/hostel-header";
 
 type OccupancyRow = { block: string; current: number; capacity: number; color?: string };
 type Announcement = { id: string; title: string; body: string; dept: string; ts: string; tone: "info"|"warning"|"success"|"alert" };

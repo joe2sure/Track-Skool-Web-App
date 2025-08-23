@@ -18,6 +18,7 @@ export default function EnhancedDashboardLogin() {
     adminId: "",
     superAdminId: "",
     librarianId: "", 
+    hostelId: "",
     password: "",
     confirmPassword: "",
   })
@@ -32,6 +33,7 @@ export default function EnhancedDashboardLogin() {
     "school-admin": { schoolId: "SCH001", adminId: "ADM001", password: "admin123" },
     "super-admin": { superAdminId: "SUPER001", password: "super123" },
     librarian: { schoolId: "SCH001", librarianId: "LIB001", password: "librarian123" },
+    hostel: { schoolId: "SCH001", hostelId: "HOS001", password: "hostel123" }, 
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -90,6 +92,11 @@ export default function EnhancedDashboardLogin() {
           formData.schoolId === cred.schoolId &&
           formData.librarianId === cred.librarianId &&
           formData.password === cred.password
+        break
+      }
+      case "hostel": {
+        const cred = credentials as typeof dummyCredentials.hostel
+        isValid = formData.schoolId === cred.schoolId && formData.hostelId === cred.hostelId && formData.password === cred.password
         break
       }
     }
@@ -267,6 +274,15 @@ export default function EnhancedDashboardLogin() {
             </div>
           </>
         )
+
+      case "hostel":
+        return (
+          <>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Hostel ID</label>
+            <Input  name="schoolId" value={formData.schoolId} onChange={handleChange} placeholder="SCH001" />
+            <Input  name="hostelId" value={formData.hostelId} onChange={handleChange} placeholder="HOS001" />
+          </>
+        )
       default:
         return null
     }
@@ -329,6 +345,7 @@ export default function EnhancedDashboardLogin() {
                 {userType === "school-admin" && <p>School ID: SCH001, Admin ID: ADM001, Password: admin123</p>}
                 {userType === "super-admin" && <p>Super Admin ID: SUPER001, Password: super123</p>}
                 {userType === "librarian" && <p>School ID: SCH001, Librarian ID: LIB001, Password: librarian123</p>}
+                {userType === "hostel" && <p>School ID: SCH001, Hostel ID: HOS001, Password: hostel123</p>}
               </div>
             </Card2>
           )}
