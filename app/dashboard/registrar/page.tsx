@@ -1,13 +1,21 @@
+// import StatCard from "@/components/dashboard/registrar/StatCard"
+// import TrendChart from "@/components/dashboard/registrar/TrendChart"
+// import RecentApplications from "@/components/dashboard/registrar/RecentApplications"
+// import RequestsTable from "@/components/dashboard/registrar/RequestsTable"
+// import Announcements from "@/components/dashboard/registrar/Announcements"
+// import Deadlines from "@/components/dashboard/registrar/Deadlines"
+// import QuickActions from "@/components/dashboard/registrar/QuickActions"
 "use client"
 
+import Announcements from "@/components/dashboard/registrar/announcements"
+import Deadlines from "@/components/dashboard/registrar/deadlines"
+import QuickActions from "@/components/dashboard/registrar/quick-actions"
+import RecentApplications from "@/components/dashboard/registrar/recent-applications"
+import RequestsTable from "@/components/dashboard/registrar/request-table"
+import StatCard from "@/components/dashboard/registrar/stat-card"
+import TrendChart from "@/components/dashboard/registrar/trend-chart"
+// import { StatCard } from "@/components/ui/librarian/stat-card"
 import { Bell, CalendarDays, CheckCircle2, ClipboardList, FileText, FolderOpenDot, Gauge, Inbox, LifeBuoy, Megaphone, ShieldCheck, UploadCloud, Users } from "lucide-react"
-import StatCard from "@/components/dashboard/registrar/StatCard"
-import TrendChart from "@/components/dashboard/registrar/TrendChart"
-import RecentApplications from "@/components/dashboard/registrar/RecentApplications"
-import RequestsTable from "@/components/dashboard/registrar/RequestsTable"
-import Announcements from "@/components/dashboard/registrar/Announcements"
-import Deadlines from "@/components/dashboard/registrar/Deadlines"
-import QuickActions from "@/components/dashboard/registrar/QuickActions"
 
 export default function RegistrarDashboardPage() {
   // --- Dummy data for the registrar dashboard ---

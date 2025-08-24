@@ -1,6 +1,8 @@
+import RegistrarHeader from "@/components/dashboard/registrar/registrar-header"
+import RegistrarSidebar from "@/components/dashboard/registrar/registrar-sidebar"
 import type { ReactNode } from "react"
-import RegistrarSidebar from "@/components/dashboard/registrar/RegistrarSidebar"
-import RegistrarHeader from "@/components/dashboard/registrar/RegistrarHeader"
+// import RegistrarSidebar from "@/components/dashboard/registrar/RegistrarSidebar"
+// import RegistrarHeader from "@/components/dashboard/registrar/RegistrarHeader"
 
 export default function RegistrarLayout({ children }: { children: ReactNode }) {
   return (
