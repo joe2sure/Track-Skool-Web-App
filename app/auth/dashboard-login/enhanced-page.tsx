@@ -309,8 +309,27 @@ export default function EnhancedDashboardLogin() {
       case "registrar":
         return (
           <>
-            <Input  name="schoolId" value={formData.schoolId} onChange={handleChange} placeholder="SCH001" />
-            <Input  name="registrarId" value={formData.registrarId} onChange={handleChange} placeholder="REG001" />
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">School ID</label>
+              <Input
+                name="schoolId"
+                value={formData.schoolId}
+                onChange={handleChange}
+                placeholder="Enter school ID (SCH001)"
+                required
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Registrar ID</label>
+              <Input
+                name="registrarId"
+                value={formData.registrarId}
+                onChange={handleChange}
+                placeholder="Enter registrar ID (REG001)"
+                required
+              />
+            </div>
           </>
         )
       default:
@@ -345,27 +364,7 @@ export default function EnhancedDashboardLogin() {
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">I am a</label>
           <div className="grid grid-cols-3 gap-2 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
-            {/* 👇 ADDED: registrar */}
-            {["student","parent","teacher","school-admin","super-admin","librarian","hostel","registrar"].map((type) => (
-              <button
-                key={type}
-                type="button"
-                onClick={() => setUserType(type)}
-                className={`px-2 py-2 text-xs font-medium rounded-md transition-colors whitespace-nowrap cursor-pointer ${
-                  userType === type ? "bg-blue-600 text-white" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                }`}
-              >
-                {type.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">I am a</label>
-          <div className="grid grid-cols-3 gap-2 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
-            {/* <-- added "hostel" here */}
-            {["student", "parent", "teacher", "school-admin", "super-admin", "librarian", "hostel"].map((type) => (
+            {["student", "parent", "teacher", "school-admin", "super-admin", "librarian", "hostel", "registrar"].map((type) => (
               <button
                 key={type}
                 type="button"
