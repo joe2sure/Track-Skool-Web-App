@@ -4,5 +4,6 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/dashboard/registrar/page": "app/dashboard/registrar/page.js",
   "/dashboard/registrar/admissions/page": "app/dashboard/registrar/admissions/page.js",
-  "/dashboard/registrar/enrollment/page": "app/dashboard/registrar/enrollment/page.js"
+  "/dashboard/registrar/enrollment/page": "app/dashboard/registrar/enrollment/page.js",
+  "/dashboard/registrar/communication/page": "app/dashboard/registrar/communication/page.js"
 }

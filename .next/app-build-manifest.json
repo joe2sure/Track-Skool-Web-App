@@ -50,6 +50,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/registrar/enrollment/page.js"
+    ],
+    "/dashboard/registrar/communication/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/registrar/communication/page.js"
     ]
   }
 }
