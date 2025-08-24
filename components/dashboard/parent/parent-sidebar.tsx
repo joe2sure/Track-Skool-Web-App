@@ -1,26 +1,9 @@
-"use client";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-} from "@/components/ui/sidebar";
-import {
-  Home,
-  User,
-  Calendar,
-  FileText,
-  MessageSquare,
-  Settings,
-  LogOut,
-  X,
-} from "lucide-react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+"use client"
+import { Home, User, Calendar, FileText, MessageSquare, Settings, LogOut, X } from "lucide-react"
+import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/Button"
 
 const menuItems = [
   {
@@ -53,212 +36,233 @@ const menuItems = [
     href: "/dashboard/parent/settings",
     icon: Settings,
   },
-];
+]
 
 export function ParentSidebar({
   isOpen,
   onToggleSidebar,
 }: {
-  isOpen: boolean;
-  onToggleSidebar: () => void;
+  isOpen: boolean
+  onToggleSidebar: () => void
 }) {
-  const pathname = usePathname();
-  const router = useRouter();
+  const pathname = usePathname()
+  const router = useRouter()
 
   const handleLogout = () => {
-    localStorage.removeItem("userType");
-    localStorage.removeItem("userData");
-    router.push("/auth/dashboard-login");
-  };
+    localStorage.removeItem("userType")
+    localStorage.removeItem("userData")
+    router.push("/auth/dashboard-login")
+  }
 
   return (
-    // <div
-    //   className={`absolute lg:relative w-3/4 lg:w-80 left-0 h-full bg-white border-r border-gray-200 flex flex-col shadow-lg transition-transform duration-300 z-50
-    //     ${isOpen ? "translate-x-0" : "-translate-x-full"}
-    //   `}
-    // ></div>
-    <Sidebar className="bg-slate-900 border-slate-700">
-      <SidebarHeader className="border-b border-slate-700 bg-slate-300 h-18 flex justify-center">
-        <div className="flex items-center gap-2 px-4 py-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <i className="ri-graduation-cap-line text-white text-lg"></i>
-          </div>
-          <span className="font-bold text-blue-600">EduHub</span>
+    <div
+      className={cn(
+        "fixed inset-y-0 left-0 z-[60] w-72 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 lg:z-auto lg:block",
+        isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
+      )}
+    >
+      <div className="h-full bg-slate-900 border-r border-slate-700 shadow-xl lg:shadow-none overflow-y-auto">
+        <div className="h-full w-full flex flex-col">
+          {/* Header */}
+          <div className="border-b border-slate-700 bg-slate-800 h-16 flex items-center justify-between px-4 flex-shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <i className="ri-graduation-cap-line text-white text-lg"></i>
+              </div>
+              <span className="font-bold text-white text-lg">EduHub</span>
+            </div>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden"
-            onClick={onToggleSidebar}
-          >
-            <X className="w-5 h-5 flex lg:hidden" />
-          </Button>
-        </div>
-      </SidebarHeader>
-      <SidebarContent className="bg-slate-900 pt-6">
-        <SidebarMenu>
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = pathname === item.href;
-
-            return (
-              <SidebarMenuItem key={item.href}>
-                <SidebarMenuButton
-                  asChild
-                  className={cn(
-                    "text-slate-300  hover:text-white hover:bg-slate-800",
-                    isActive && "bg-blue-600 text-white hover:bg-blue-700"
-                  )}
-                >
-                  <Link href={item.href}>
-                    <Icon className="w-4 h-4" />
-                    <span>{item.title}</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            );
-          })}
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              onClick={handleLogout}
-              className="text-slate-300 hover:text-white hover:bg-red-600 cursor-pointer"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden text-white hover:bg-slate-700"
+              onClick={onToggleSidebar}
             >
-              <LogOut className="w-4 h-4" />
-              <span>Logout</span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarContent>
-    </Sidebar>
-  );
+              <X className="w-5 h-5" />
+            </Button>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 bg-slate-900 py-4 overflow-y-auto">
+            <nav className="space-y-2 px-3">
+              {menuItems.map((item) => {
+                const Icon = item.icon
+                const isActive = pathname === item.href
+
+                return (
+                  <div key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "flex items-center gap-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg px-3 py-3 transition-colors duration-200 w-full",
+                        isActive && "bg-blue-600 text-white hover:bg-blue-700",
+                      )}
+                      onClick={() => {
+                        if (window.innerWidth < 1024) {
+                          onToggleSidebar()
+                        }
+                      }}
+                    >
+                      <Icon className="w-5 h-5 flex-shrink-0" />
+                      <span className="font-medium">{item.title}</span>
+                    </Link>
+                  </div>
+                )
+              })}
+
+              <div className="mt-6 pt-4 border-t border-slate-700">
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-3 text-slate-300 hover:text-white hover:bg-red-600 cursor-pointer rounded-lg px-3 py-3 transition-colors duration-200 w-full"
+                >
+                  <LogOut className="w-5 h-5 flex-shrink-0" />
+                  <span className="font-medium">Logout</span>
+                </button>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 
 
-// "use client"
 
+
+
+// "use client";
 // import {
 //   Sidebar,
 //   SidebarContent,
 //   SidebarHeader,
 //   SidebarMenu,
-//   SidebarMenuButton,
 //   SidebarMenuItem,
-//   SidebarFooter,
-// } from "@/components/ui/sidebar"
+//   SidebarMenuButton,
+// } from "@/components/ui/sidebar";
 // import {
-//   LayoutDashboard,
-//   TrendingUp,
+//   Home,
+//   User,
 //   Calendar,
-//   ClipboardList,
-//   BarChart3,
-//   CreditCard,
+//   FileText,
 //   MessageSquare,
-//   CalendarDays,
 //   Settings,
 //   LogOut,
-//   GraduationCap,
-// } from "lucide-react"
-// import Link from "next/link"
-// import { usePathname } from "next/navigation"
-// import { cn } from "@/lib/utils"
+//   X,
+// } from "lucide-react";
+// import Link from "next/link";
+// import { usePathname, useRouter } from "next/navigation";
+// import { cn } from "@/lib/utils";
+// import { Button } from "@/components/ui/Button";
 
 // const menuItems = [
 //   {
 //     title: "Dashboard",
-//     url: "/dashboard/parent",
-//     icon: LayoutDashboard,
+//     href: "/dashboard/parent",
+//     icon: Home,
 //   },
 //   {
 //     title: "Child Progress",
-//     url: "/dashboard/parent/child-progress",
-//     icon: TrendingUp,
+//     href: "/dashboard/parent/child-progress",
+//     icon: User,
 //   },
 //   {
 //     title: "Attendance",
-//     url: "/dashboard/parent/attendance",
+//     href: "/dashboard/parent/attendance",
 //     icon: Calendar,
 //   },
 //   {
 //     title: "Assignments",
-//     url: "/dashboard/parent/assignments",
-//     icon: ClipboardList,
-//   },
-//   {
-//     title: "Results",
-//     url: "/dashboard/parent/results",
-//     icon: BarChart3,
-//   },
-//   {
-//     title: "Fees & Payments",
-//     url: "/dashboard/parent/fees-payments",
-//     icon: CreditCard,
+//     href: "/dashboard/parent/assignments",
+//     icon: FileText,
 //   },
 //   {
 //     title: "Communication",
-//     url: "/dashboard/parent/communication",
+//     href: "/dashboard/parent/communication",
 //     icon: MessageSquare,
 //   },
 //   {
-//     title: "Events",
-//     url: "/dashboard/parent/events",
-//     icon: CalendarDays,
-//   },
-//   {
 //     title: "Settings",
-//     url: "/dashboard/parent/settings",
+//     href: "/dashboard/parent/settings",
 //     icon: Settings,
 //   },
-// ]
+// ];
 
-// export function ParentSidebar() {
-//   const pathname = usePathname()
+// export function ParentSidebar({
+//   isOpen,
+//   onToggleSidebar,
+// }: {
+//   isOpen: boolean;
+//   onToggleSidebar: () => void;
+// }) {
+//   const pathname = usePathname();
+//   const router = useRouter();
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("userType");
+//     localStorage.removeItem("userData");
+//     router.push("/auth/dashboard-login");
+//   };
 
 //   return (
-//     <Sidebar className="border-r border-slate-800">
-//       <SidebarHeader className="p-4">
-//         <div className="flex items-center gap-2">
+//     // <div
+//     //   className={`absolute lg:relative w-3/4 lg:w-80 left-0 h-full bg-white border-r border-gray-200 flex flex-col shadow-lg transition-transform duration-300 z-50
+//     //     ${isOpen ? "translate-x-0" : "-translate-x-full"}
+//     //   `}
+//     // ></div>
+//     <Sidebar className="bg-slate-900 border-slate-700">
+//       <SidebarHeader className="border-b border-slate-700 bg-slate-300 h-18 flex justify-center">
+//         <div className="flex items-center gap-2 px-4 py-2">
 //           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-//             <GraduationCap className="w-5 h-5 text-white" />
+//             <i className="ri-graduation-cap-line text-white text-lg"></i>
 //           </div>
-//           <span className="text-xl font-bold text-white">EduManage</span>
+//           <span className="font-bold text-blue-600">EduHub</span>
+
+//           <Button
+//             variant="ghost"
+//             size="icon"
+//             className="lg:hidden"
+//             onClick={onToggleSidebar}
+//           >
+//             <X className="w-5 h-5 flex lg:hidden" />
+//           </Button>
 //         </div>
 //       </SidebarHeader>
-//       <SidebarContent className="px-2">
+//       <SidebarContent className="bg-slate-900 pt-6">
 //         <SidebarMenu>
-//           {menuItems.map((item) => (
-//             <SidebarMenuItem key={item.title}>
-//               <SidebarMenuButton
-//                 asChild
-//                 isActive={pathname === item.url}
-//                 className={cn(
-//                   "w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800",
-//                   pathname === item.url && "bg-blue-600 text-white hover:bg-blue-700",
-//                 )}
-//               >
-//                 <Link href={item.url}>
-//                   <item.icon className="w-5 h-5" />
-//                   <span>{item.title}</span>
-//                 </Link>
-//               </SidebarMenuButton>
-//             </SidebarMenuItem>
-//           ))}
-//         </SidebarMenu>
-//       </SidebarContent>
-//       <SidebarFooter className="p-4">
-//         <SidebarMenu>
+//           {menuItems.map((item) => {
+//             const Icon = item.icon;
+//             const isActive = pathname === item.href;
+
+//             return (
+//               <SidebarMenuItem key={item.href}>
+//                 <SidebarMenuButton
+//                   asChild
+//                   className={cn(
+//                     "text-slate-300  hover:text-white hover:bg-slate-800",
+//                     isActive && "bg-blue-600 text-white hover:bg-blue-700"
+//                   )}
+//                 >
+//                   <Link href={item.href}>
+//                     <Icon className="w-4 h-4" />
+//                     <span>{item.title}</span>
+//                   </Link>
+//                 </SidebarMenuButton>
+//               </SidebarMenuItem>
+//             );
+//           })}
 //           <SidebarMenuItem>
-//             <SidebarMenuButton className="text-slate-300 hover:text-white hover:bg-slate-800">
-//               <LogOut className="w-5 h-5" />
+//             <SidebarMenuButton
+//               onClick={handleLogout}
+//               className="text-slate-300 hover:text-white hover:bg-red-600 cursor-pointer"
+//             >
+//               <LogOut className="w-4 h-4" />
 //               <span>Logout</span>
 //             </SidebarMenuButton>
 //           </SidebarMenuItem>
 //         </SidebarMenu>
-//         <div className="mt-4 text-xs text-slate-500">
-//           <p>EduManage v2.0</p>
-//           <p>© 2024 School Management</p>
-//         </div>
-//       </SidebarFooter>
+//       </SidebarContent>
 //     </Sidebar>
-//   )
+//   );
 // }

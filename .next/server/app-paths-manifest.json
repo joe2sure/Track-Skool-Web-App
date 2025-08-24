@@ -1,11 +1,10 @@
 {
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
-  "/dashboard/hostel/page": "app/dashboard/hostel/page.js",
-  "/dashboard/hostel/hostels/page": "app/dashboard/hostel/hostels/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/dashboard/hostel/rooms/page": "app/dashboard/hostel/rooms/page.js",
-  "/dashboard/hostel/allocations/page": "app/dashboard/hostel/allocations/page.js",
-  "/dashboard/hostel/reports/page": "app/dashboard/hostel/reports/page.js",
   "/auth/dashboard-login/page": "app/auth/dashboard-login/page.js",
-  "/dashboard/registrar/communication/page": "app/dashboard/registrar/communication/page.js"
+  "/dashboard/parent/page": "app/dashboard/parent/page.js",
+  "/dashboard/super-admin/page": "app/dashboard/super-admin/page.js",
+  "/dashboard/parent/child-progress/page": "app/dashboard/parent/child-progress/page.js",
+  "/dashboard/parent/assignments/page": "app/dashboard/parent/assignments/page.js",
+  "/dashboard/parent/attendance/page": "app/dashboard/parent/attendance/page.js"
 }
