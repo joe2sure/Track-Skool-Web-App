@@ -9,7 +9,10 @@ import Button2 from "@/components/ui/Button2"
 import Card2 from "@/components/ui/Card2"
 
 export default function EnhancedDashboardLogin() {
-  const [userType, setUserType] = useState("student")
+  // const [userType, setUserType] = useState("student")
+    const [userType, setUserType] = useState(
+    (typeof window !== "undefined" && (localStorage.getItem("userType") as string)) || "student"
+  )
   const [formData, setFormData] = useState({
     schoolId: "",
     studentId: "",
@@ -19,6 +22,7 @@ export default function EnhancedDashboardLogin() {
     superAdminId: "",
     librarianId: "",
     hostelId: "",
+    registrarId: "",
     password: "",
     confirmPassword: "",
   })
@@ -34,6 +38,7 @@ export default function EnhancedDashboardLogin() {
     "super-admin": { superAdminId: "SUPER001", password: "super123" },
     librarian: { schoolId: "SCH001", librarianId: "LIB001", password: "librarian123" },
     hostel: { schoolId: "SCH001", hostelId: "HOS001", password: "hostel123" }, 
+    registrar: { schoolId: "SCH001", registrarId: "REG001", password: "registrar123" },
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -96,6 +101,11 @@ export default function EnhancedDashboardLogin() {
       case "hostel": {
         const cred = credentials as typeof dummyCredentials.hostel
         isValid = formData.schoolId === cred.schoolId && formData.hostelId === cred.hostelId && formData.password === cred.password
+        break
+      }
+      case "registrar": {
+        const cred = credentials as { schoolId: string; registrarId: string; password: string }
+        isValid = formData.schoolId === cred.schoolId && formData.registrarId === cred.registrarId && formData.password === cred.password
         break
       }
     }
@@ -295,6 +305,14 @@ export default function EnhancedDashboardLogin() {
             </div>
           </>
         )
+
+      case "registrar":
+        return (
+          <>
+            <Input  name="schoolId" value={formData.schoolId} onChange={handleChange} placeholder="SCH001" />
+            <Input  name="registrarId" value={formData.registrarId} onChange={handleChange} placeholder="REG001" />
+          </>
+        )
       default:
         return null
     }
@@ -322,6 +340,25 @@ export default function EnhancedDashboardLogin() {
           <p className="text-gray-600 dark:text-gray-300 mt-2">
             {isRegistering ? "Register for dashboard access" : "Access your personalized dashboard"}
           </p>
+        </div>
+
+        <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">I am a</label>
+          <div className="grid grid-cols-3 gap-2 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
+            {/* 👇 ADDED: registrar */}
+            {["student","parent","teacher","school-admin","super-admin","librarian","hostel","registrar"].map((type) => (
+              <button
+                key={type}
+                type="button"
+                onClick={() => setUserType(type)}
+                className={`px-2 py-2 text-xs font-medium rounded-md transition-colors whitespace-nowrap cursor-pointer ${
+                  userType === type ? "bg-blue-600 text-white" : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                }`}
+              >
+                {type.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="mb-6">
@@ -359,6 +396,7 @@ export default function EnhancedDashboardLogin() {
                 {userType === "super-admin" && <p>Super Admin ID: SUPER001, Password: super123</p>}
                 {userType === "librarian" && <p>School ID: SCH001, Librarian ID: LIB001, Password: librarian123</p>}
                 {userType === "hostel" && <p>School ID: SCH001, Hostel ID: HOS001, Password: hostel123</p>}
+                {userType === "registrar" && <p>School ID: SCH001, Registrar ID: REG001, Password: registrar123</p>}
               </div>
             </Card2>
           )}
