@@ -1,3 +1,5 @@
+"use client"
+
 import RegistrarHeader from "@/components/dashboard/registrar/registrar-header"
 import RegistrarSidebar from "@/components/dashboard/registrar/registrar-sidebar"
 import type { ReactNode } from "react"

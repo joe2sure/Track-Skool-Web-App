@@ -1,3 +1,6 @@
+"use client"
+
+
 export default function Page() {
   return (
     <div className="rounded-xl border border-white/10 bg-slate-800/60 p-6">
