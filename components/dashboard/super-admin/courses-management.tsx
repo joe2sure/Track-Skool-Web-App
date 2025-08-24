@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/Button"
 import { Card, CardContent } from "@/components/ui/Card"
+// import { Button } from "@/components/ui/button"
+// import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Search, Plus, Eye, Edit, MoreHorizontal, Users, Clock, Calendar } from "lucide-react"
 import { Input } from "@/components/ui/parent/input"
@@ -134,25 +136,27 @@ export function CoursesManagement() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 p-4 sm:p-0">
       {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-white">Courses Management</h1>
-        <p className="text-gray-400 mt-2">Manage all courses across your educational system</p>
+      <div className="text-center sm:text-left">
+        <h1 className="text-2xl sm:text-3xl font-bold text-white">Courses Management</h1>
+        <p className="text-gray-400 mt-1 sm:mt-2 text-sm sm:text-base">
+          Manage all courses across your educational system
+        </p>
       </div>
 
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {statsData.map((stat, index) => (
           <Card key={index} className="bg-gray-800 border-gray-700">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-gray-400 text-sm">{stat.title}</p>
-                  <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
+            <CardContent className="p-3 sm:p-6">
+              <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2 sm:gap-0">
+                <div className="text-center sm:text-left">
+                  <p className="text-gray-400 text-xs sm:text-sm">{stat.title}</p>
+                  <p className="text-lg sm:text-2xl font-bold text-white mt-1">{stat.value}</p>
                 </div>
                 <div
-                  className={`w-12 h-12 rounded-lg ${stat.color} flex items-center justify-center text-white text-xl`}
+                  className={`w-8 h-8 sm:w-12 sm:h-12 rounded-lg ${stat.color} flex items-center justify-center text-white text-sm sm:text-xl`}
                 >
                   {stat.icon}
                 </div>
@@ -163,35 +167,35 @@ export function CoursesManagement() {
       </div>
 
       {/* Search and Filters */}
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-          <div className="relative flex-1 max-w-md">
+      <div className="flex flex-col gap-3 sm:gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 sm:items-center sm:justify-between">
+          <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
             <Input
               placeholder="Search courses..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+              className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400 text-sm sm:text-base"
             />
           </div>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto">
             <Plus className="w-4 h-4 mr-2" />
             Create Course
           </Button>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1 sm:gap-2 overflow-x-auto pb-2">
           {categories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "ghost"}
               onClick={() => setSelectedCategory(category)}
-              className={
+              className={`${
                 selectedCategory === category
                   ? "bg-blue-600 text-white"
                   : "text-gray-400 hover:text-white hover:bg-gray-700"
-              }
+              } text-xs sm:text-sm whitespace-nowrap`}
               size="sm"
             >
               {category}
@@ -201,61 +205,61 @@ export function CoursesManagement() {
       </div>
 
       {/* Courses Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
         {filteredCourses.map((course) => (
           <Card key={course.id} className="bg-gray-800 border-gray-700 overflow-hidden">
-            <div className={`h-32 bg-gradient-to-r ${course.gradient} relative`}>
+            <div className={`h-24 sm:h-32 bg-gradient-to-r ${course.gradient} relative`}>
               <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-              <div className="absolute top-4 left-4">
-                <Badge className={getStatusColor(course.status)}>{course.status}</Badge>
+              <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                <Badge className={`${getStatusColor(course.status)} text-xs`}>{course.status}</Badge>
               </div>
-              <div className="absolute bottom-4 left-4">
-                <h3 className="text-white font-bold text-lg">{course.title}</h3>
-                <p className="text-white text-sm opacity-90">{course.code}</p>
+              <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                <h3 className="text-white font-bold text-sm sm:text-lg">{course.title}</h3>
+                <p className="text-white text-xs sm:text-sm opacity-90">{course.code}</p>
               </div>
             </div>
-            <CardContent className="p-6">
-              <div className="space-y-4">
+            <CardContent className="p-4 sm:p-6">
+              <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <Badge variant="secondary" className="bg-gray-700 text-gray-300 mb-2">
+                  <Badge variant="secondary" className="bg-gray-700 text-gray-300 mb-2 text-xs">
                     {course.subject}
                   </Badge>
-                  <p className="text-gray-400 text-sm">{course.description}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">{course.description}</p>
                 </div>
 
-                <div className="space-y-2 text-sm">
+                <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
                   <div className="flex items-center gap-2 text-gray-400">
-                    <Users className="w-4 h-4" />
-                    <span>Dr. {course.instructor}</span>
+                    <Users className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="truncate">Dr. {course.instructor}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-400">
-                    <Users className="w-4 h-4" />
-                    <span>{course.school}</span>
+                    <Users className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="truncate">{course.school}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-400">
-                    <Users className="w-4 h-4" />
+                    <Users className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                     <span>{course.studentsEnrolled} students enrolled</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-400">
-                    <Clock className="w-4 h-4" />
+                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                     <span>{course.duration}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-gray-700">
-                  <div className="flex items-center gap-2 text-gray-400 text-sm">
-                    <Calendar className="w-4 h-4" />
+                <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-700">
+                  <div className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
+                    <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                     <span>Start: {course.startDate}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                      <Eye className="w-4 h-4" />
+                  <div className="flex items-center gap-1">
+                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1 sm:p-2">
+                      <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
-                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                      <Edit className="w-4 h-4" />
+                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1 sm:p-2">
+                      <Edit className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
-                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                      <MoreHorizontal className="w-4 h-4" />
+                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white p-1 sm:p-2">
+                      <MoreHorizontal className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
                   </div>
                 </div>
@@ -267,3 +271,277 @@ export function CoursesManagement() {
     </div>
   )
 }
+
+
+
+
+
+// "use client"
+
+// import { useState } from "react"
+// import { Button } from "@/components/ui/Button"
+// import { Card, CardContent } from "@/components/ui/Card"
+// import { Badge } from "@/components/ui/badge"
+// import { Search, Plus, Eye, Edit, MoreHorizontal, Users, Clock, Calendar } from "lucide-react"
+// import { Input } from "@/components/ui/parent/input"
+
+// const statsData = [
+//   {
+//     title: "Total Courses",
+//     value: "342",
+//     icon: "📚",
+//     color: "bg-blue-500",
+//   },
+//   {
+//     title: "Active Courses",
+//     value: "267",
+//     icon: "✅",
+//     color: "bg-green-500",
+//   },
+//   {
+//     title: "Enrolled Students",
+//     value: "8,234",
+//     icon: "👥",
+//     color: "bg-purple-500",
+//   },
+//   {
+//     title: "Course Categories",
+//     value: "12",
+//     icon: "📂",
+//     color: "bg-orange-500",
+//   },
+// ]
+
+// const categories = [
+//   "All Categories",
+//   "Mathematics",
+//   "Science",
+//   "English",
+//   "Social Studies",
+//   "Arts",
+//   "Physical Education",
+// ]
+
+// const coursesData = [
+//   {
+//     id: 1,
+//     title: "Advanced Mathematics",
+//     code: "MATH401",
+//     subject: "Mathematics",
+//     description: "Advanced calculus and analytical geometry for senior students",
+//     instructor: "Dr. Sarah Johnson",
+//     school: "Oak Valley High School",
+//     studentsEnrolled: 28,
+//     duration: "36 weeks",
+//     startDate: "9/1/2024",
+//     status: "active",
+//     credits: 4,
+//     gradient: "from-blue-500 to-purple-600",
+//   },
+//   {
+//     id: 2,
+//     title: "Introduction to Biology",
+//     code: "BIO101",
+//     subject: "Science",
+//     description: "Fundamental concepts of biology and life sciences",
+//     instructor: "Prof. Michael Chen",
+//     school: "Riverside Elementary",
+//     studentsEnrolled: 35,
+//     duration: "32 weeks",
+//     startDate: "9/1/2024",
+//     status: "active",
+//     credits: 3,
+//     gradient: "from-green-500 to-teal-600",
+//   },
+//   {
+//     id: 3,
+//     title: "World History",
+//     code: "HIST201",
+//     subject: "Social Studies",
+//     description: "Comprehensive study of world civilizations and cultures",
+//     instructor: "Ms. Emily Davis",
+//     school: "Mountain View Middle",
+//     studentsEnrolled: 42,
+//     duration: "36 weeks",
+//     startDate: "9/15/2024",
+//     status: "pending",
+//     credits: 3,
+//     gradient: "from-purple-500 to-pink-600",
+//   },
+//   {
+//     id: 4,
+//     title: "Creative Writing",
+//     code: "ENG305",
+//     subject: "English",
+//     description: "Develop writing skills through creative expression",
+//     instructor: "Mr. John Wilson",
+//     school: "Sunset Academy",
+//     studentsEnrolled: 24,
+//     duration: "18 weeks",
+//     startDate: "1/15/2024",
+//     status: "completed",
+//     credits: 2,
+//     gradient: "from-orange-500 to-red-600",
+//   },
+// ]
+
+// export function CoursesManagement() {
+//   const [searchTerm, setSearchTerm] = useState("")
+//   const [selectedCategory, setSelectedCategory] = useState("All Categories")
+
+//   const filteredCourses = coursesData.filter((course) => {
+//     const matchesSearch =
+//       course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//       course.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//       course.instructor.toLowerCase().includes(searchTerm.toLowerCase())
+//     const matchesCategory = selectedCategory === "All Categories" || course.subject === selectedCategory
+//     return matchesSearch && matchesCategory
+//   })
+
+//   const getStatusColor = (status: string) => {
+//     switch (status) {
+//       case "active":
+//         return "bg-green-600"
+//       case "pending":
+//         return "bg-orange-600"
+//       case "completed":
+//         return "bg-gray-600"
+//       default:
+//         return "bg-gray-600"
+//     }
+//   }
+
+//   return (
+//     <div className="space-y-6">
+//       {/* Header */}
+//       <div>
+//         <h1 className="text-3xl font-bold text-white">Courses Management</h1>
+//         <p className="text-gray-400 mt-2">Manage all courses across your educational system</p>
+//       </div>
+
+//       {/* Statistics Cards */}
+//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+//         {statsData.map((stat, index) => (
+//           <Card key={index} className="bg-gray-800 border-gray-700">
+//             <CardContent className="p-6">
+//               <div className="flex items-center justify-between">
+//                 <div>
+//                   <p className="text-gray-400 text-sm">{stat.title}</p>
+//                   <p className="text-2xl font-bold text-white mt-1">{stat.value}</p>
+//                 </div>
+//                 <div
+//                   className={`w-12 h-12 rounded-lg ${stat.color} flex items-center justify-center text-white text-xl`}
+//                 >
+//                   {stat.icon}
+//                 </div>
+//               </div>
+//             </CardContent>
+//           </Card>
+//         ))}
+//       </div>
+
+//       {/* Search and Filters */}
+//       <div className="flex flex-col gap-4">
+//         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+//           <div className="relative flex-1 max-w-md">
+//             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+//             <Input
+//               placeholder="Search courses..."
+//               value={searchTerm}
+//               onChange={(e) => setSearchTerm(e.target.value)}
+//               className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+//             />
+//           </div>
+//           <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+//             <Plus className="w-4 h-4 mr-2" />
+//             Create Course
+//           </Button>
+//         </div>
+
+//         {/* Category Filters */}
+//         <div className="flex flex-wrap gap-2">
+//           {categories.map((category) => (
+//             <Button
+//               key={category}
+//               variant={selectedCategory === category ? "default" : "ghost"}
+//               onClick={() => setSelectedCategory(category)}
+//               className={
+//                 selectedCategory === category
+//                   ? "bg-blue-600 text-white"
+//                   : "text-gray-400 hover:text-white hover:bg-gray-700"
+//               }
+//               size="sm"
+//             >
+//               {category}
+//             </Button>
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Courses Grid */}
+//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//         {filteredCourses.map((course) => (
+//           <Card key={course.id} className="bg-gray-800 border-gray-700 overflow-hidden">
+//             <div className={`h-32 bg-gradient-to-r ${course.gradient} relative`}>
+//               <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+//               <div className="absolute top-4 left-4">
+//                 <Badge className={getStatusColor(course.status)}>{course.status}</Badge>
+//               </div>
+//               <div className="absolute bottom-4 left-4">
+//                 <h3 className="text-white font-bold text-lg">{course.title}</h3>
+//                 <p className="text-white text-sm opacity-90">{course.code}</p>
+//               </div>
+//             </div>
+//             <CardContent className="p-6">
+//               <div className="space-y-4">
+//                 <div>
+//                   <Badge variant="secondary" className="bg-gray-700 text-gray-300 mb-2">
+//                     {course.subject}
+//                   </Badge>
+//                   <p className="text-gray-400 text-sm">{course.description}</p>
+//                 </div>
+
+//                 <div className="space-y-2 text-sm">
+//                   <div className="flex items-center gap-2 text-gray-400">
+//                     <Users className="w-4 h-4" />
+//                     <span>Dr. {course.instructor}</span>
+//                   </div>
+//                   <div className="flex items-center gap-2 text-gray-400">
+//                     <Users className="w-4 h-4" />
+//                     <span>{course.school}</span>
+//                   </div>
+//                   <div className="flex items-center gap-2 text-gray-400">
+//                     <Users className="w-4 h-4" />
+//                     <span>{course.studentsEnrolled} students enrolled</span>
+//                   </div>
+//                   <div className="flex items-center gap-2 text-gray-400">
+//                     <Clock className="w-4 h-4" />
+//                     <span>{course.duration}</span>
+//                   </div>
+//                 </div>
+
+//                 <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+//                   <div className="flex items-center gap-2 text-gray-400 text-sm">
+//                     <Calendar className="w-4 h-4" />
+//                     <span>Start: {course.startDate}</span>
+//                   </div>
+//                   <div className="flex items-center gap-2">
+//                     <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+//                       <Eye className="w-4 h-4" />
+//                     </Button>
+//                     <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+//                       <Edit className="w-4 h-4" />
+//                     </Button>
+//                     <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
+//                       <MoreHorizontal className="w-4 h-4" />
+//                     </Button>
+//                   </div>
+//                 </div>
+//               </div>
+//             </CardContent>
+//           </Card>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }

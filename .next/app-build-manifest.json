@@ -231,6 +231,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/parent/settings/page.js"
+    ],
+    "/dashboard/super-admin/roles/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/super-admin/roles/page.js"
+    ],
+    "/dashboard/super-admin/courses/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/super-admin/courses/page.js"
     ]
   }
 }

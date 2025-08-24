@@ -2,8 +2,6 @@
 
 import { SuperAdminDashboard } from "../../../components/dashboard/super-admin/super-admin-dashboard";
 
-// import { SuperAdminDashboard } from "@/components/dashboard/super-admin/super-admin-dashboard";
-
 export default function SuperAdminPage() {
   return <SuperAdminDashboard />
 }
