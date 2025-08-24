@@ -19,14 +19,14 @@ import {
 const items = [
   { href: "/dashboard/hostel", label: "Dashboard", icon: <Home className="w-4 h-4" /> },
   { href: "#", label: "Hostels", icon: <Building2 className="w-4 h-4" /> },
-  { href: "#", label: "Rooms", icon: <SquareGantt className="w-4 h-4" /> },
-  { href: "#", label: "Allocations", icon: <ListChecks className="w-4 h-4" /> },
-  { href: "#", label: "Requests", icon: <MessageSquare className="w-4 h-4" /> },
-  { href: "#", label: "Maintenance", icon: <Wrench className="w-4 h-4" /> },
-  { href: "#", label: "Events", icon: <CalendarDays className="w-4 h-4" /> },
-  { href: "#", label: "Communication", icon: <Bell className="w-4 h-4" /> },
-  { href: "#", label: "Reports", icon: <FileText className="w-4 h-4" /> },
-  { href: "#", label: "Settings", icon: <Settings className="w-4 h-4" /> },
+  { href: "/dashboard/rooms", label: "Rooms", icon: <SquareGantt className="w-4 h-4" /> },
+  { href: "/dashboard/allocations", label: "Allocations", icon: <ListChecks className="w-4 h-4" /> },
+  { href: "/dashboard/requests", label: "Requests", icon: <MessageSquare className="w-4 h-4" /> },
+  { href: "/dashboard/maintenance", label: "Maintenance", icon: <Wrench className="w-4 h-4" /> },
+  { href: "/dashboard/events", label: "Events", icon: <CalendarDays className="w-4 h-4" /> },
+  { href: "communication", label: "Communication", icon: <Bell className="w-4 h-4" /> },
+  { href: "reports", label: "Reports", icon: <FileText className="w-4 h-4" /> },
+  { href: "settings", label: "Settings", icon: <Settings className="w-4 h-4" /> },
 ];
 
 export default function HostelSidebar({ active }: { active?: string }) {
