@@ -55,6 +55,36 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/registrar/communication/page.js"
+    ],
+    "/dashboard/hostel/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/hostel/loading.js"
+    ],
+    "/dashboard/hostel/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/hostel/page.js"
+    ],
+    "/dashboard/hostel/hostels/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/hostel/hostels/page.js"
+    ],
+    "/dashboard/hostel/rooms/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/hostel/rooms/page.js"
+    ],
+    "/dashboard/hostel/allocations/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/hostel/allocations/page.js"
+    ],
+    "/dashboard/hostel/reports/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/hostel/reports/page.js"
     ]
   }
 }

@@ -6,7 +6,7 @@ import ComingSoon from "@/components/ui/ComingSoon";
 import HostelSidebar from "@/components/dashboard/hostel/hostel-sidebar";
 import HostelTopbar from "@/components/dashboard/hostel/hostel-header";
 
-const Settings: React.FC = () => {
+const Rooms: React.FC = () => {
   const router = useRouter();
 
   // Route guard (only allow when logged in via dummy auth)
@@ -19,7 +19,7 @@ const Settings: React.FC = () => {
     <div className="min-h-screen bg-gray-950 text-gray-100">
       <div className="flex">
         {/* Sidebar */}
-        <HostelSidebar active="settings" />
+        <HostelSidebar active="rooms" />
 
         {/* Main */}
         <div className="flex-1">
@@ -27,7 +27,7 @@ const Settings: React.FC = () => {
           
           {/* Content Area */}
           <div className="p-6">
-            <ComingSoon title="Hostel Settings" />
+            <ComingSoon title="Room Management" />
           </div>
         </div>
       </div>
@@ -35,16 +35,15 @@ const Settings: React.FC = () => {
   );
 };
 
-export default Settings;
-
+export default Rooms;
 
 
 // import ComingSoon from "@/components/ui/ComingSoon";
 // import React from "react";
 // // import ComingSoon from "../../components/common/ComingSoon";
 
-// const Settings: React.FC = () => {
-//   return <ComingSoon title="Settings" />;
+// const Rooms: React.FC = () => {
+//   return <ComingSoon title="Hostel Rooms" />;
 // };
 
-// export default Settings;
+// export default Rooms;
