@@ -1,11 +1,9 @@
 {
   "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/page": "app/page.js",
+  "/auth/dashboard-login/page": "app/auth/dashboard-login/page.js",
+  "/auth/register/page": "app/auth/register/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/dashboard/super-admin/page": "app/dashboard/super-admin/page.js",
-  "/dashboard/super-admin/roles/page": "app/dashboard/super-admin/roles/page.js",
-  "/dashboard/super-admin/courses/page": "app/dashboard/super-admin/courses/page.js",
-  "/dashboard/super-admin/finance/page": "app/dashboard/super-admin/finance/page.js",
-  "/dashboard/super-admin/users/page": "app/dashboard/super-admin/users/page.js",
-  "/dashboard/super-admin/communication/page": "app/dashboard/super-admin/communication/page.js",
-  "/dashboard/super-admin/reports/page": "app/dashboard/super-admin/reports/page.js"
+  "/dashboard/super-admin/reports/page": "app/dashboard/super-admin/reports/page.js",
+  "/dashboard/super-admin/page": "app/dashboard/super-admin/page.js"
 }
