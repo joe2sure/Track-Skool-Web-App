@@ -241,6 +241,26 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/super-admin/courses/page.js"
+    ],
+    "/dashboard/super-admin/finance/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/super-admin/finance/page.js"
+    ],
+    "/dashboard/super-admin/communication/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/super-admin/communication/page.js"
+    ],
+    "/dashboard/super-admin/reports/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/super-admin/reports/loading.js"
+    ],
+    "/dashboard/super-admin/reports/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/dashboard/super-admin/reports/page.js"
     ]
   }
 }
